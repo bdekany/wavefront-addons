@@ -25,3 +25,11 @@ Based on [Prometheus Exporter for Confluent Cloud](https://www.confluent.io/fr-f
 > metrics prefix need to be `prometheus`or to be change in JSON
 
 ![Confluent Cloud Dashboard preview](images/confluent-cloud.png)
+
+
+### Kubernetes Deprecated API
+Based on [K8S Blog about deprecation](https://kubernetes.io/blog/2020/09/03/warnings/#metrics)
+
+Requirements: collect apiServer Metrics `collector.apiServerMetrics=true`
+
+![Kube Deprecated API Dashboard preview](images/kube-deprecated-api.png)
