@@ -1,0 +1,1310 @@
+{
+  "name": "NGINX Ingress Controller",
+  "url": "NGINX-Ingress-Controller-dbr",
+  "eventFilterType": "NONE",
+  "displayDescription": false,
+  "displaySectionTableOfContents": true,
+  "displayQueryParameters": true,
+  "sections": [
+    {
+      "name": "Ingress Controller Metrics",
+      "id": "NGINX-Ingress-Controller-dbr-section-1",
+      "rows": [
+        {
+          "charts": [
+            {
+              "chartSettings": {
+                "plainMarkdownContent": "<clr-icon shape=\"list\"></clr-icon> Numbers of ingress workers",
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "type": "markdown-widget",
+                "y1UnitAutoscaling": false,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Informations",
+              "units": "Units",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 3,
+                  "h": 3
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"metric\":\"ts()\",\"filters\":[[],\"and\"],\"functions\":[]}",
+                  "disabled": false,
+                  "secondaryAxis": false
+                }
+              ],
+              "noDefaultEvents": false
+            },
+            {
+              "chartSettings": {
+                "plainMarkdownContent": "Number of successful NGINX reloads.",
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "showValueColumn": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "groupBySource": false,
+                "windowing": "full",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Info",
+              "summarization": "MAX",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Worker running"
+                },
+                "dashboardLayout": {
+                  "x": 3,
+                  "y": 0,
+                  "w": 3,
+                  "h": 3
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "max(lag(15m, (ts(\"${cluster_name}.nginx.nginx.ingress.controller.nginx.worker.processes.total.gauge\", generation=current))))",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "disabled": false,
+                  "secondaryAxis": false
+                }
+              ],
+              "noDefaultEvents": false
+            },
+            {
+              "chartSettings": {
+                "plainMarkdownContent": "<clr-icon shape=\"list\"></clr-icon> Numbers of URL handled",
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "type": "markdown-widget",
+                "y1UnitAutoscaling": false,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Informations",
+              "units": "Units",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 6,
+                  "y": 0,
+                  "w": 3,
+                  "h": 3
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"metric\":\"ts()\",\"filters\":[[],\"and\"],\"functions\":[]}",
+                  "disabled": false,
+                  "secondaryAxis": false
+                }
+              ],
+              "noDefaultEvents": false
+            },
+            {
+              "chartSettings": {
+                "plainMarkdownContent": "Number of successful NGINX reloads.",
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "100",
+                "stackType": "zero",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "showValueColumn": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "groupBySource": false,
+                "windowing": "full",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Info",
+              "summarization": "MAX",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Ingress registered"
+                },
+                "dashboardLayout": {
+                  "x": 9,
+                  "y": 0,
+                  "w": 3,
+                  "h": 3
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "avg(lag(15m,ts(\"${cluster_name}.nginx.nginx.ingress.controller.ingress.resources.total.gauge\", type=\"regular\")))",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "disabled": false,
+                  "secondaryAxis": false
+                }
+              ],
+              "noDefaultEvents": false
+            }
+          ],
+          "heightFactor": 50
+        },
+        {
+          "charts": [
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "plainMarkdownContent": "<clr-icon shape=\"refresh\"></clr-icon> Number of NGINX Config reloads",
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "type": "markdown-widget",
+                "y1UnitAutoscaling": false,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "NGINX Reloads",
+              "anomalySampleSize": "8",
+              "units": "Units",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 3,
+                  "w": 3,
+                  "h": 3
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}",
+                  "disabled": false,
+                  "secondaryAxis": false
+                }
+              ],
+              "noDefaultEvents": false,
+              "anomalyType": "both"
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "showValueColumn": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "groupBySource": false,
+                "windowing": "full",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "config reload",
+              "anomalySampleSize": "8",
+              "units": "",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "sparklineDisplayLabel": "A Clone",
+                  "sparklineDisplaySubLabel": "config reload"
+                },
+                "dashboardLayout": {
+                  "x": 3,
+                  "y": 3,
+                  "w": 3,
+                  "h": 3
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "max(ts(${cluster_name}.nginx.nginx.ingress.controller.nginx.reloads.total.counter))",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": false,
+                  "secondaryAxis": false
+                }
+              ],
+              "noDefaultEvents": false,
+              "anomalyType": "both"
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "plainMarkdownContent": "<clr-icon shape=\"refresh\"></clr-icon> Time since last config error",
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "type": "markdown-widget",
+                "y1UnitAutoscaling": false,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "NGINX Reloads",
+              "anomalySampleSize": "8",
+              "units": "Units",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 6,
+                  "y": 3,
+                  "w": 3,
+                  "h": 3
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}",
+                  "disabled": false,
+                  "secondaryAxis": false
+                }
+              ],
+              "noDefaultEvents": false,
+              "anomalyType": "both"
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "showValueColumn": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "groupBySource": false,
+                "windowing": "full",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "sparklineValueTextMapThresholds": [],
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "sparklineValueTextMapText": [],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": true,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "Last config Failed",
+              "anomalySampleSize": "8",
+              "units": "s",
+              "summarization": "MAX",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "noDataMessage": "No Failure in Time Window",
+                "singleStat": {
+                  "sparklineDisplayLabel": "A Clone",
+                  "sparklineDisplaySubLabel": "since last config failed"
+                },
+                "dashboardLayout": {
+                  "x": 9,
+                  "y": 3,
+                  "w": 3,
+                  "h": 3
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "timestamp(if( ts(${cluster_name}.nginx.nginx.ingress.controller.nginx.reload.errors.total.counter) > 1, 1))",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false
+                },
+                {
+                  "name": "B",
+                  "query": "at(1m,time())",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false
+                },
+                {
+                  "name": "C",
+                  "query": "${B} - ${A}",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": false,
+                  "secondaryAxis": false
+                }
+              ],
+              "noDefaultEvents": false,
+              "anomalyType": "both"
+            }
+          ],
+          "heightFactor": 50
+        },
+        {
+          "charts": [
+            {
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "150",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "sparklineValueColorMapColors": [
+                  "rgba(73,175,217,1)",
+                  "rgba(73,175,217,1)"
+                ],
+                "showValueColumn": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "sparklineFillColor": "rgba(0,0,0,0.2)",
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "groupBySource": false,
+                "windowing": "full",
+                "sparklineDisplayColor": "rgba(250,250,250,1)",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                  1
+                ],
+                "y1Units": "",
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineLineColor": "rgba(0,0,0,0.3)",
+                "sparklineDecimalPrecision": 1,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "",
+              "units": "",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Average CPU Usage Rate"
+                },
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 6,
+                  "w": 4,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "pod_cpu",
+                  "query": "lag(10m, avg(align(60s, mean, ts(\"kubernetes.pod.cpu.usage_rate\", cluster=\"${cluster_name}\" and pod_name=\"nginx-ingress*\"))))",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "disabled": false,
+                  "secondaryAxis": false
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "CPU usage rate in millicores. This metric has a 10 minute delay for cluster collection."
+            },
+            {
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": true,
+                "sparklineDisplayFontSize": "150",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "sparklineValueColorMapColors": [
+                  "rgba(73,175,217,1)",
+                  "rgba(73,175,217,1)"
+                ],
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "sparklineFillColor": "rgba(0,0,0,0.2)",
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "windowing": "full",
+                "sparklineDisplayColor": "rgba(250,250,250,1)",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                  1
+                ],
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": true,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineLineColor": "rgba(0,0,0,0.3)",
+                "sparklineDecimalPrecision": 1,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "",
+              "units": "B",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "sparklineDisplayLabel": "pod_memory_usage",
+                  "sparklineDisplaySubLabel": "Average Memory Usage",
+                  "commaDelimited": false
+                },
+                "dashboardLayout": {
+                  "x": 4,
+                  "y": 6,
+                  "w": 4,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "pod_memory_usage",
+                  "query": "lag(10m, avg(align(1m, ts(\"kubernetes.pod.memory.working_set\", cluster=\"${cluster_name}\" and pod_name=\"nginx-ingress*\"))))",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "disabled": false,
+                  "secondaryAxis": false
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "Memory usage in bytes. This metric has a 10 minute delay for cluster collection."
+            },
+            {
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": true,
+                "sparklineDisplayFontSize": "150",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "sparklineValueColorMapColors": [
+                  "rgba(73,175,217,1)",
+                  "rgba(73,175,217,1)"
+                ],
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "sparklineFillColor": "rgba(0,0,0,0.2)",
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "windowing": "full",
+                "sparklineDisplayColor": "rgba(250,250,250,1)",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                  1
+                ],
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": true,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineLineColor": "rgba(0,0,0,0.3)",
+                "sparklineDecimalPrecision": 1,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "",
+              "units": "B",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Bytes Transferred Rate",
+                  "commaDelimited": false
+                },
+                "dashboardLayout": {
+                  "x": 8,
+                  "y": 6,
+                  "w": 4,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "pod_network_transfer",
+                  "query": "lag(10m, sum(align(60s, mean, rate(ts(\"kubernetes.pod.network.tx\", cluster=\"${cluster_name}\" and pod_name=\"nginx-ingress*\")))))",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "disabled": false,
+                  "secondaryAxis": false
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "This metric has a 10 minute delay for cluster collection."
+            }
+          ],
+          "heightFactor": 80
+        }
+      ]
+    },
+    {
+      "name": "Ingresses",
+      "id": "pYQLD",
+      "rows": [
+        {
+          "charts": [
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "type": "top-k",
+                "y1UnitAutoscaling": false,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "Top Server Requested",
+              "anomalySampleSize": "8",
+              "units": "",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "topK": {
+                  "labelBy": [
+                    "server_zone"
+                  ],
+                  "kValue": 10
+                },
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 6,
+                  "h": 8
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "ts(\"${cluster_name}.nginx.nginx.ingress.nginxplus.server.zone.requests.counter\")",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "disabled": false,
+                  "secondaryAxis": false
+                }
+              ],
+              "noDefaultEvents": false,
+              "anomalyType": "both"
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "type": "top-k",
+                "y1UnitAutoscaling": false,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "Top SSL Server Requested",
+              "anomalySampleSize": "8",
+              "units": "",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "topK": {
+                  "labelBy": [
+                    "server_zone"
+                  ],
+                  "kValue": 10
+                },
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 6,
+                  "y": 0,
+                  "w": 6,
+                  "h": 8
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "ts(\"${cluster_name}.nginx.nginx.ingress.nginxplus.server.zone.ssl.handshakes.counter\")",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "disabled": false,
+                  "secondaryAxis": false
+                }
+              ],
+              "noDefaultEvents": false,
+              "anomalyType": "both"
+            }
+          ],
+          "heightFactor": 160
+        }
+      ]
+    },
+    {
+      "name": "Workqueue metrics",
+      "id": "sLM3S",
+      "rows": [
+        {
+          "charts": [
+            {
+              "chartSettings": {
+                "plainMarkdownContent": "How long in seconds a config change stays in the workqueue before being requested.",
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "type": "markdown-widget",
+                "y1UnitAutoscaling": false,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Change Waiting in Queue",
+              "units": "Units",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 3,
+                  "h": 5
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"metric\":\"ts()\",\"filters\":[[],\"and\"],\"functions\":[]}",
+                  "disabled": false,
+                  "secondaryAxis": false
+                }
+              ],
+              "noDefaultEvents": false
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "showValueColumn": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "groupBySource": false,
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "type": "histogram",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "Waiting in Queue",
+              "anomalySampleSize": "8",
+              "units": "",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "histogram": {
+                  "xUnits": "s",
+                  "percentileMarkers": [
+                    0.95,
+                    0.99,
+                    1,
+                    "avg"
+                  ],
+                  "numBuckets": 30
+                },
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 3,
+                  "y": 0,
+                  "w": 9,
+                  "h": 5
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "ts(${cluster_name}.nginx.nginx.ingress.controller.workqueue.queue.duration.seconds.bucket)",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "disabled": false,
+                  "secondaryAxis": false
+                }
+              ],
+              "noDefaultEvents": false,
+              "anomalyType": "both"
+            }
+          ],
+          "heightFactor": 100
+        },
+        {
+          "charts": [
+            {
+              "chartSettings": {
+                "plainMarkdownContent": "How long in seconds processing a config change from the workqueue takes.",
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "type": "markdown-widget",
+                "y1UnitAutoscaling": false,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Change Process Time",
+              "units": "Units",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 5,
+                  "w": 3,
+                  "h": 5
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"metric\":\"ts()\",\"filters\":[[],\"and\"],\"functions\":[]}",
+                  "disabled": false,
+                  "secondaryAxis": false
+                }
+              ],
+              "noDefaultEvents": false
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "showValueColumn": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "groupBySource": false,
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "type": "histogram",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "Change Process Time",
+              "anomalySampleSize": "8",
+              "units": "",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "histogram": {
+                  "percentileMarkers": [
+                    0.95,
+                    0.99,
+                    "avg",
+                    1
+                  ],
+                  "xUnits": "s"
+                },
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 3,
+                  "y": 5,
+                  "w": 9,
+                  "h": 5
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "ts(${cluster_name}.nginx.nginx.ingress.controller.workqueue.work.duration.seconds.bucket)",
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "disabled": false,
+                  "secondaryAxis": false
+                }
+              ],
+              "noDefaultEvents": false,
+              "anomalyType": "both"
+            }
+          ],
+          "heightFactor": 100
+        }
+      ]
+    }
+  ],
+  "parameterDetails": {
+    "cluster_name": {
+      "tagsBlackListRegex": "",
+      "parameterType": "DYNAMIC",
+      "tagKey": "cluster",
+      "queryValue": "max(ts(\"kubernetes.cluster.cpu.limit\"), cluster)",
+      "order": 1,
+      "defaultValue": "Label",
+      "hideFromView": false,
+      "value": "dev",
+      "label": "Cluster",
+      "dynamicFieldType": "TAG_KEY",
+      "valuesToReadableStrings": {
+        "Label": "dev",
+        "Label_2": "infra",
+        "Label_3": "preprod",
+        "Label_4": "sandbox-infra"
+      },
+      "allowAll": false,
+      "selectedLabel": "Label"
+    }
+  },
+  "tags" :{
+    "customerTags":  ["community"]
+  }
+}

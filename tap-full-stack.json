@@ -1,0 +1,2356 @@
+{
+  "name": "TAP-Full-Stack",
+  "url": "TAP-Full-Stack",
+  "eventFilterType": "BYCHART",
+  "eventQuery": "events(name=\"tekton-pipeline*\")",
+  "displayDescription": false,
+  "displaySectionTableOfContents": true,
+  "displayQueryParameters": true,
+  "sections": [
+    {
+      "name": "AWS  EKS Underlying Platform Health",
+      "id": "BFOIh",
+      "rows": [
+        {
+          "charts": [
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "autoColumnTags": false,
+                "plainMarkdownContent": "### AWS Integration\nThese charts show EC2 (and potentially EKS) metrics from the native AWS integration",
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "EC2",
+              "anomalySampleSize": "8",
+              "units": "Units",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 2,
+                  "h": 5
+                }
+              },
+              "sources": [
+                {
+                  "sourceDescription": "",
+                  "queryType": "WQL",
+                  "query": "",
+                  "name": "A",
+                  "querybuilderEnabled": true,
+                  "secondaryAxis": false,
+                  "scatterPlotSource": "Y",
+                  "disabled": false,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}"
+                }
+              ],
+              "noDefaultEvents": false,
+              "anomalyType": "both"
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "stackType": "zero",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "windowing": "full",
+                "min": 0,
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "type": "line",
+                "y1UnitAutoscaling": false,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "CPU EC2",
+              "anomalySampleSize": "8",
+              "units": "%",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 2,
+                  "y": 0,
+                  "w": 5,
+                  "h": 5
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "querybuilderSerialization": "{\"_v\":1,\"metricType\":\"m\",\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "querybuilderEnabled": true,
+                  "sourceDescription": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "P999",
+                  "query": "percentile(999, align(1m, mean, last(15m, ts(\"aws.ec2.cpuutilization\" ${region_filter}))))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "P99",
+                  "query": "percentile(99, align(1m, mean, last(15m, ts(\"aws.ec2.cpuutilization\" ${region_filter}))))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "P95",
+                  "query": "percentile(95, align(1m, mean, last(15m, ts(\"aws.ec2.cpuutilization\" ${region_filter}))))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "P75",
+                  "query": "percentile(75, align(1m, mean, last(15m, ts(\"aws.ec2.cpuutilization\" ${region_filter}))))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "P50",
+                  "query": "percentile(50, align(1m, mean, last(15m, ts(\"aws.ec2.cpuutilization\" ${region_filter}))))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "P25",
+                  "query": "percentile(25, align(1m, mean, last(15m, ts(\"aws.ec2.cpuutilization\" ${region_filter}))))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "P5",
+                  "query": "percentile(5, align(1m, mean, last(15m, ts(\"aws.ec2.cpuutilization\" ${region_filter}))))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "P1",
+                  "query": "percentile(1, align(1m, mean, last(15m, ts(\"aws.ec2.cpuutilization\" ${region_filter}))))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "P1 Clone",
+                  "query": "align(1m, mean, last(15m, ts(\"aws.ec2.cpuutilization.*\" ${region_filter})))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "P1 Clone 2",
+                  "query": "interpolate(ts(\"aws.ec2.cpuutilization.average\" ${region_filter} and source=\"eks-ng*\"))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": true,
+              "anomalyType": "both"
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "showValueColumn": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [
+                  "Region"
+                ],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "groupBySource": false,
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "type": "line",
+                "y1UnitAutoscaling": false,
+                "showLabels": false,
+                "tagMode": "custom",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 1,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "EC2 Network ",
+              "anomalySampleSize": "8",
+              "units": "bps",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 7,
+                  "y": 0,
+                  "w": 5,
+                  "h": 5
+                }
+              },
+              "sources": [
+                {
+                  "name": "net",
+                  "query": "interpolate(ts(\"aws.ec2.networkout.average\" and source=\"eks-ng*\"))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "net Clone",
+                  "query": "interpolate(ts(\"aws.ec2.networkout\" ${region_filter}))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "top 10",
+                  "query": "if(top(10, mmax(2h, ${net})), ${net})",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "anomalyType": "both"
+            }
+          ],
+          "heightFactor": 100
+        }
+      ]
+    },
+    {
+      "name": "K8S Summary",
+      "id": "kSVGY",
+      "rows": [
+        {
+          "charts": [
+            {
+              "chartSettings": {
+                "type": "markdown-widget",
+                "autoColumnTags": false,
+                "plainMarkdownContent": "### Kubernetes Integration\n\nThese charts show the K8S platform metrics gathered by the Kubernetes integration",
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "K8S Platform Metrics",
+              "units": "Units",
+              "base": 0,
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 2,
+                  "h": 4
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "scatterPlotSource": "Y",
+                  "querybuilderSerialization": "{\"_v\":1,\"metric\":\"\",\"filters\":[[],\"and\"],\"functions\":[]}",
+                  "querybuilderEnabled": true,
+                  "sourceDescription": "",
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "150",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "sparklineValueColorMapColors": [
+                  "rgba(73,175,217,1)",
+                  "rgba(73,175,217,1)"
+                ],
+                "showValueColumn": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "sparklineFillColor": "rgba(0,0,0,0.2)",
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "groupBySource": true,
+                "windowing": "full",
+                "sparklineDisplayColor": "rgba(250,250,250,1)",
+                "sparklineSize": "NONE",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                  1
+                ],
+                "y1Units": "",
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineLineColor": "rgba(0,0,0,0.3)",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "",
+              "anomalySampleSize": "8",
+              "units": "",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": false,
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Nodes"
+                },
+                "dashboardLayout": {
+                  "x": 2,
+                  "y": 0,
+                  "w": 2,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "pod_count",
+                  "query": "sum(align(60s, ts(\"kubernetes.node.cpu.usage\", cluster=\"${cluster_name}\" )))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "pod_count Clone",
+                  "query": "count(ts(\"kubernetes.node.cpu.node_utilization\", cluster=${cluster_name}))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "This metric has a 10 minute delay for cluster collection.",
+              "anomalyType": "both"
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "150",
+                "fixedLegendFilterLimit": 5,
+                "sparklineDisplayPostfix": "%",
+                "fixedLegendShowSourceName": true,
+                "sparklineValueColorMapColors": [
+                  "rgba(73,175,217,1)",
+                  "rgba(73,175,217,1)",
+                  "rgba(245,118,0,1)",
+                  "rgba(245,79,71,1)"
+                ],
+                "showValueColumn": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "sparklineFillColor": "rgba(0,0,0,0.2)",
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "windowing": "full",
+                "sparklineDisplayColor": "rgba(250,250,250,1)",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                  1,
+                  80,
+                  90
+                ],
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineLineColor": "rgba(0,0,0,0.3)",
+                "sparklineDecimalPrecision": 1,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "",
+              "anomalySampleSize": "8",
+              "units": "",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Average CPU Utilization"
+                },
+                "dashboardLayout": {
+                  "x": 4,
+                  "y": 0,
+                  "w": 2,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "avg(ts(\"kubernetes.node.cpu.node_utilization\", cluster=\"${cluster_name}\" and nodename=\"${node_name}\")) * 100",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "anomalyType": "both"
+            },
+            {
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "150",
+                "fixedLegendFilterLimit": 5,
+                "sparklineDisplayPostfix": "%",
+                "fixedLegendShowSourceName": true,
+                "sparklineValueColorMapColors": [
+                  "rgba(73,175,217,1)",
+                  "rgba(73,175,217,1)",
+                  "rgba(245,118,0,1)",
+                  "rgba(245,79,71,1)"
+                ],
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "sparklineFillColor": "rgba(0,0,0,0.2)",
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "windowing": "full",
+                "sparklineDisplayColor": "rgba(250,250,250,1)",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                  1,
+                  80,
+                  90
+                ],
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineLineColor": "rgba(0,0,0,0.3)",
+                "sparklineDecimalPrecision": 1,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Node Storage Utilization"
+                },
+                "dashboardLayout": {
+                  "x": 6,
+                  "y": 0,
+                  "w": 2,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "storage",
+                  "query": "ts(\"kubernetes.node.filesystem.usage\", cluster=\"${cluster_name}\" ) / ts(\"kubernetes.node.filesystem.limit\", cluster=\"${cluster_name}\" )",
+                  "querybuilderEnabled": false,
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "avg_storage",
+                  "query": "lag(10m, avg(${storage}) * 100)",
+                  "querybuilderEnabled": false,
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "This metric has a 10 minute delay for cluster collection."
+            },
+            {
+              "anomalySeverity": "medium",
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "150",
+                "fixedLegendFilterLimit": 5,
+                "sparklineDisplayPostfix": "%",
+                "fixedLegendShowSourceName": true,
+                "sparklineValueColorMapColors": [
+                  "rgba(73,175,217,1)",
+                  "rgba(73,175,217,1)",
+                  "rgba(245,118,0,1)",
+                  "rgba(245,79,71,1)"
+                ],
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "sparklineFillColor": "rgba(0,0,0,0.2)",
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "windowing": "full",
+                "sparklineDisplayColor": "rgba(250,250,250,1)",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                  1,
+                  80,
+                  90
+                ],
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineLineColor": "rgba(0,0,0,0.3)",
+                "sparklineDecimalPrecision": 1,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "",
+              "anomalySampleSize": "8",
+              "units": "",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Node Memory Utilization"
+                },
+                "dashboardLayout": {
+                  "x": 8,
+                  "y": 0,
+                  "w": 2,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "utilization",
+                  "query": "ts(\"kubernetes.node.memory.working_set\", cluster=\"${cluster_name}\" )/ts(\"kubernetes.node.memory.node_allocatable\", cluster=\"${cluster_name}\" )",
+                  "querybuilderEnabled": false,
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "avg_util",
+                  "query": "lag(10m, avg(${utilization}) * 100)",
+                  "querybuilderEnabled": false,
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "This metric has a 10 minute delay for cluster collection.",
+              "anomalyType": "both"
+            },
+            {
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "150",
+                "fixedLegendFilterLimit": 5,
+                "sparklineValueColorMapColors": [
+                  "rgba(73,175,217,1)",
+                  "rgba(73,175,217,1)"
+                ],
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "sparklineFillColor": "rgba(0,0,0,0.2)",
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "groupBySource": false,
+                "windowing": "full",
+                "sparklineDisplayColor": "rgba(250,250,250,1)",
+                "sparklineSize": "NONE",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                  1
+                ],
+                "y1Units": "",
+                "sortValuesDescending": true,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineLineColor": "rgba(0,0,0,0.3)",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "",
+              "units": "",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "singleStat": {
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Pod Containers",
+                  "commaDelimited": false
+                },
+                "dashboardLayout": {
+                  "x": 10,
+                  "y": 0,
+                  "w": 2,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "container_count",
+                  "query": "lag(10m, sum(align(60s, ts(\"kubernetes.ns.pod_container.count\", cluster=\"${cluster_name}\" and source=\"${node_name}\" and namespace_name=\"${namespace}\"))))",
+                  "querybuilderEnabled": false,
+                  "disabled": false,
+                  "secondaryAxis": false
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "This metric has a 10 minute delay for cluster collection."
+            }
+          ],
+          "heightFactor": 80
+        }
+      ]
+    },
+    {
+      "name": "TAP Metrics",
+      "id": "IO3vk",
+      "rows": [
+        {
+          "charts": [
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "autoColumnTags": false,
+                "plainMarkdownContent": "### Scraping Prometheus end-points \nThese charts show how Tanzu Observability can automatically scrape prometheus end-points and bring those into TO for true observability!\n\nExample:\n\n    kubectl annotate pod tekton-pipelines-controller-7b4b9f979d-nlfhf      prometheus.io/scrape=\"true\" -n tekton-pipelines \n    kubectl annotate pod tekton-pipelines-controller-7b4b9f979d-nlfhf      prometheus.io/port=\"9090\" -n tekton-pipelines ",
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "TAP Internal Metrics",
+              "anomalySampleSize": "8",
+              "units": "Units",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 8,
+                  "h": 5
+                }
+              },
+              "sources": [
+                {
+                  "sourceDescription": "",
+                  "queryType": "WQL",
+                  "query": "",
+                  "name": "A",
+                  "querybuilderEnabled": true,
+                  "secondaryAxis": false,
+                  "scatterPlotSource": "Y",
+                  "disabled": false,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}"
+                }
+              ],
+              "noDefaultEvents": false,
+              "anomalyType": "both"
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "100",
+                "stackType": "zero",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "sparklineFillColor": "rgba(0,154,219,1)",
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "windowing": "full",
+                "sparklineSize": "NONE",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "Tekton Task Runs",
+              "anomalySampleSize": "8",
+              "units": "",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "topK": {
+                  "labelBy": []
+                },
+                "lineFill": 1,
+                "singleStat": {
+                  "sparklineDisplayLabel": "Query Clone",
+                  "sparklineDisplaySubLabel": "Tekton Task Runs / Last 24 Hours"
+                },
+                "dashboardLayout": {
+                  "x": 8,
+                  "y": 0,
+                  "w": 4,
+                  "h": 5
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "Query Clone 2",
+                  "query": "ts(\"tekton.pipelines.controller.taskrun.count.counter\")",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "Query",
+                  "query": "ts(\"tekton.pipelines.webhook.workqueue.adds.total.counter\")",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "data",
+                  "query": "ts(\"tekton.pipelines.controller.taskrun.count.counter\")",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "last_day_data_if_exists",
+                  "query": "lag(1d, ${data})",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "last_day_count",
+                  "query": "if(${data} > ${last_day_data_if_exists} , ${data} - ${last_day_data_if_exists}, 0)",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "anomalyType": "both"
+            }
+          ],
+          "heightFactor": 100
+        },
+        {
+          "charts": [
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "showValueColumn": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "groupBySource": false,
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "type": "line",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": true,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "Knative Serving Requests/Reconciles - Rate",
+              "anomalySampleSize": "8",
+              "units": "Units",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "topK": {
+                  "labelBy": [
+                    "namespace_name"
+                  ]
+                },
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 5,
+                  "w": 4,
+                  "h": 4
+                }
+              },
+              "sources": [
+                {
+                  "name": "Requests",
+                  "query": "rate(ts(tanzu.vmware.com/cloud-native-runtimes.knative.controller.client.results.counter and label.app.kubernetes.io/part-of=knative-serving))",
+                  "querybuilderEnabled": false,
+                  "sourceColor": "rgba(87,170,19,1)",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "Reconciles",
+                  "query": "sum(rate(ts(\"tanzu.vmware.com/cloud-native-runtimes.knative.controller.reconcile.count.counter\" and label.app.kubernetes.io/part-of=knative-serving)))",
+                  "querybuilderEnabled": false,
+                  "sourceColor": "rgba(59,64,206,1)",
+                  "disabled": false,
+                  "secondaryAxis": true,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "Traces",
+                  "query": "avg(mavg(10m, cs(tracing.derived.${application}.${service}.*.invocation.count, ${overview_filters} )))",
+                  "querybuilderEnabled": false,
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "Controller Rate Clone",
+                  "query": "ratediff(ts(tanzu.vmware.com/cloud-native-runtimes.knative.controller.reconcile.count.counter and label.app.kubernetes.io/part-of=knative-serving))",
+                  "querybuilderEnabled": false,
+                  "sourceColor": "rgba(0,4,112,1)",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "Eventing Controller Rate",
+                  "query": "rate(ts(tanzu.vmware.com/cloud-native-runtimes.knative.controller.client.results.counter and label.app=eventing-controller ))",
+                  "querybuilderEnabled": false,
+                  "sourceColor": "rgba(110,114,216,1)",
+                  "disabled": true,
+                  "secondaryAxis": true,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "A",
+                  "query": "events(name=\"tekton-pipeline*\")",
+                  "querybuilderEnabled": false,
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "anomalyType": "both"
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "windowing": "full",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "line",
+                "y1UnitAutoscaling": false,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "Knative Results Counters (rate summed)",
+              "anomalySampleSize": "8",
+              "units": "Units",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Knative Webhook Latency"
+                },
+                "dashboardLayout": {
+                  "x": 4,
+                  "y": 5,
+                  "w": 4,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "ts(tanzu.vmware.com/cloud-native-runtimes.knative.controller.workqueue.depth.gauge)",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "A Clone",
+                  "query": "sum(rate(ts(tanzu.vmware.com/cloud-native-runtimes.knative.*.client.results.counter)))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "B",
+                  "query": "events(name=\"tekton-pipeline*\")",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "anomalyType": "both"
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "type": "histogram",
+                "y1UnitAutoscaling": false,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "Controller Workqueue Latency",
+              "anomalySampleSize": "8",
+              "units": "",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "histogram": {
+                  "xUnits": "s"
+                },
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 8,
+                  "y": 5,
+                  "w": 4,
+                  "h": 4
+                }
+              },
+              "sources": [
+                {
+                  "name": "Query",
+                  "query": "ts(\"tanzu.vmware.com/cloud-native-runtimes.knative.controller.workqueue.queue.latency.seconds.bucket\")",
+                  "querybuilderEnabled": false,
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "anomalyType": "both"
+            }
+          ],
+          "heightFactor": 80
+        }
+      ]
+    },
+    {
+      "name": "Workload Health",
+      "id": "SectionFromEditor165444114288704210622227680172",
+      "rows": [
+        {
+          "charts": [
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "autoColumnTags": false,
+                "plainMarkdownContent": "### OpenTelemetry Native Ingestion\nThese charts show services metrics collected without instrumenting code, using the OpenTelemetry Operator, a custom instrumentation and annotating the Workload (or namespace, or pod)",
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "Service Metrics",
+              "anomalySampleSize": "8",
+              "units": "Units",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 2,
+                  "h": 4
+                }
+              },
+              "sources": [
+                {
+                  "sourceDescription": "",
+                  "queryType": "WQL",
+                  "query": "",
+                  "name": "A",
+                  "querybuilderEnabled": true,
+                  "secondaryAxis": false,
+                  "scatterPlotSource": "Y",
+                  "disabled": false,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}"
+                }
+              ],
+              "noDefaultEvents": false,
+              "anomalyType": "both"
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "125",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "sparklineValueColorMapColors": [
+                  "rgba(87,170,19,1)",
+                  "rgba(224,34,0,1)"
+                ],
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "sparklineFillColor": "rgba(224,34,0,1)",
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "windowing": "full",
+                "sparklineDisplayColor": "rgba(255,255,255,1)",
+                "sparklineSize": "NONE",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                  0.95
+                ],
+                "y1Units": "",
+                "sparklineValueTextMapThresholds": [],
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 2,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineLineColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "Apdex",
+              "anomalySampleSize": "8",
+              "summarization": "LAST",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 0,
+                "singleStat": {
+                  "sparklineDisplayLabel": "${application}",
+                  "sparklineDisplaySubLabel": "Apdex - ${application}"
+                },
+                "dashboardLayout": {
+                  "x": 2,
+                  "y": 0,
+                  "w": 2,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "querybuilderSerialization": "{\"metric\":\"ts()\",\"metricType\":\"m\",\"filters\":[[],\"and\"],\"functions\":[],\"_v\":1}",
+                  "querybuilderEnabled": true,
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "A Clone",
+                  "query": "hs(tracing.aggregated.derived.*.duration.micros.m, ${aggregated_filters})",
+                  "querybuilderEnabled": false,
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "A",
+                  "query": " alignedSummary(95, merge(hs(tracing.aggregated.derived.*.duration.micros.m, ${aggregated_filters})))",
+                  "querybuilderEnabled": false,
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "B",
+                  "query": "apdex(1, application=${application})",
+                  "querybuilderEnabled": false,
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "Latest request rate in the selected time window.",
+              "anomalyType": "both"
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "sparklineValueColorMapColors": [
+                  "rgba(0,154,219,1)",
+                  "#a36500"
+                ],
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "windowing": "full",
+                "sparklineDisplayColor": "rgba(255,255,255,1)",
+                "sparklineSize": "NONE",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                  10
+                ],
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 2,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "Request Rate",
+              "anomalySampleSize": "8",
+              "units": "",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "dashboardLinks": {
+                  "*": {
+                    "destination": "/dashboards/Service-Dashboard-Clone",
+                    "variables": {
+                      "application": "application"
+                    }
+                  }
+                },
+                "lineFill": 1,
+                "singleStat": {
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Requests / second"
+                },
+                "dashboardLayout": {
+                  "x": 4,
+                  "y": 0,
+                  "w": 2,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "round(at('end', msum(1vw, rawsum(cs(tracing.aggregated.derived.*.invocation.count, ${aggregated_filters})))))/windowWidth()",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "Latest request rate in the selected time window.",
+              "anomalyType": "both"
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "groupBySource": false,
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "type": "top-k",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "Top Failed Requests",
+              "anomalySampleSize": "8",
+              "units": "",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "dashboardLinks": {
+                  "*": {
+                    "constants": {
+                      "tags": "error=true"
+                    },
+                    "destination": "/tracing/search",
+                    "tags": {
+                      "operation": "operationName"
+                    },
+                    "targetFormat": "tracing",
+                    "variables": {
+                      "application": "application",
+                      "cluster": "cluster",
+                      "service": "service",
+                      "shard": "shard",
+                      "source": "source",
+                      "span.kind": "spanKind"
+                    }
+                  }
+                },
+                "decimalPrecision": 0,
+                "topK": {
+                  "labelBy": [
+                    "operationName"
+                  ],
+                  "labelHeader": "Requests",
+                  "valueHeader": "(sum)"
+                },
+                "lineFill": 1,
+                "colorMap": {
+                  "colors": [
+                    "#e02200"
+                  ]
+                },
+                "dashboardLayout": {
+                  "x": 6,
+                  "y": 0,
+                  "w": 2,
+                  "h": 4
+                }
+              },
+              "sources": [
+                {
+                  "name": "operation-fail-rate",
+                  "query": "highpass(0, round(at('end', default(0, msum(1vw, rawsum(cs(tracing.derived.${application}.${service}.*.error.count, ${overview_filters}), operationName))))))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "Requests that failed most frequently in the selected time window. Click a request to drill down to related traces.",
+              "anomalyType": "both"
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "groupBySource": false,
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "type": "top-k",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "Top Requests",
+              "anomalySampleSize": "8",
+              "units": "",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "dashboardLinks": {
+                  "*": {
+                    "destination": "/tracing/search",
+                    "tags": {
+                      "operation": "operationName"
+                    },
+                    "targetFormat": "tracing",
+                    "variables": {
+                      "application": "application",
+                      "cluster": "cluster",
+                      "service": "service",
+                      "shard": "shard",
+                      "source": "source",
+                      "span.kind": "spanKind"
+                    }
+                  }
+                },
+                "decimalPrecision": 0,
+                "topK": {
+                  "labelBy": [
+                    "operationName"
+                  ],
+                  "labelHeader": "Requests",
+                  "valueHeader": "(sum)"
+                },
+                "lineFill": 1,
+                "colorMap": {
+                  "colors": [
+                    "#0079ad"
+                  ]
+                },
+                "dashboardLayout": {
+                  "x": 8,
+                  "y": 0,
+                  "w": 2,
+                  "h": 4
+                }
+              },
+              "sources": [
+                {
+                  "name": "operation-invocation-rate",
+                  "query": "highpass(0, round(at('end', msum(1vw, rawsum(cs(tracing.derived.${application}.${service}.*.invocation.count, ${overview_filters}), operationName)))))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "Requests that were made most frequently in the selected time window. Click a request to drill down to related traces.",
+              "anomalyType": "both"
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "groupBySource": false,
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "type": "top-k",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": true,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "Slowest Requests (P95)",
+              "anomalySampleSize": "8",
+              "units": "us",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "dashboardLinks": {
+                  "*": {
+                    "constants": {
+                      "sortBy": "LONGEST_FIRST"
+                    },
+                    "destination": "/tracing/search",
+                    "tags": {
+                      "operation": "operationName"
+                    },
+                    "targetFormat": "tracing",
+                    "variables": {
+                      "application": "application",
+                      "cluster": "cluster",
+                      "service": "service",
+                      "shard": "shard",
+                      "source": "source",
+                      "span.kind": "spanKind"
+                    }
+                  }
+                },
+                "decimalPrecision": 2,
+                "topK": {
+                  "labelBy": [
+                    "operationName"
+                  ],
+                  "labelHeader": "Requests",
+                  "valueHeader": "(P95)"
+                },
+                "lineFill": 1,
+                "colorMap": {
+                  "colors": [
+                    "#2429c2"
+                  ]
+                },
+                "dashboardLayout": {
+                  "x": 10,
+                  "y": 0,
+                  "w": 2,
+                  "h": 4
+                }
+              },
+              "sources": [
+                {
+                  "name": "operation-duration-p95",
+                  "query": "alignedSummary(95, merge(hs(tracing.derived.${application}.${service}.*.duration.micros.m, ${overview_filters}), operationName))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "Slowest requests in the selected time window. Click a request to drill down to related traces.",
+              "anomalyType": "both"
+            }
+          ],
+          "heightFactor": 80
+        },
+        {
+          "charts": [
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "sparklineValueColorMapColors": [
+                  "rgba(0,154,219,1)",
+                  "#a36500"
+                ],
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "windowing": "full",
+                "sparklineDisplayColor": "rgba(255,255,255,1)",
+                "sparklineSize": "NONE",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                  10
+                ],
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "line",
+                "y1UnitAutoscaling": false,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 2,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "Request Rate",
+              "anomalySampleSize": "8",
+              "units": "",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "dashboardLinks": {
+                  "*": {
+                    "destination": "/dashboards/Service-Dashboard-Clone",
+                    "variables": {
+                      "application": "application"
+                    }
+                  }
+                },
+                "lineFill": 1,
+                "singleStat": {
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Requests / second"
+                },
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 4,
+                  "w": 12,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "Tracing",
+                  "query": "sum(cs(tracing.aggregated.derived.*.invocation.count, ${aggregated_filters}))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "Tracing Clone",
+                  "query": "cs(tracing.aggregated.derived.*.invocation.count, ${aggregated_filters})",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "Knative",
+                  "query": "sum(rate(ts(\"tanzu.vmware.com/cloud-native-runtimes.knative.controller.reconcile.count.counter\" and label.app.kubernetes.io/part-of=knative-serving)))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "sourceColor": "rgba(0,0,0,1)",
+                  "disabled": true,
+                  "secondaryAxis": true,
+                  "queryType": "WQL"
+                },
+                {
+                  "name": "Knative Serving",
+                  "query": "rate(ts(tanzu.vmware.com/cloud-native-runtimes.knative.controller.client.results.counter and label.app.kubernetes.io/part-of=knative-serving))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": false,
+                  "secondaryAxis": true,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "Latest request rate in the selected time window.",
+              "anomalyType": "both"
+            }
+          ],
+          "heightFactor": 80
+        }
+      ]
+    }
+  ],
+  "parameterDetails": {
+    "aggregated_filters": {
+      "parameterType": "LIST",
+      "valueOrdering": [
+        "default"
+      ],
+      "order": 9,
+      "defaultValue": "default",
+      "hideFromView": true,
+      "label": "aggregated-filters",
+      "valuesToReadableStrings": {
+        "default": "application=\"${application}\" and service=\"${service}\" and cluster=\"${cluster}\" and shard=\"${shard}\" and span.kind?=\"${spanKind}\""
+      },
+      "allowAll": false
+    },
+    "2_region": {
+      "parameterType": "DYNAMIC",
+      "tagKey": "Region",
+      "queryValue": "collect(ts(\"aws.ec2.cpuutilization\", accountId=\"${1_accountId}\"), taggify(1, Region, \"*\"))",
+      "order": 4,
+      "defaultValue": "Label",
+      "hideFromView": false,
+      "value": "*",
+      "label": "Region",
+      "dynamicFieldType": "TAG_KEY",
+      "valuesToReadableStrings": {
+        "Label": "*",
+        "Label_2": "us-east-2"
+      },
+      "selectedLabel": "Label"
+    },
+    "instance_filter": {
+      "parameterType": "SIMPLE",
+      "order": 12,
+      "defaultValue": "Label",
+      "hideFromView": true,
+      "value": "and InstanceId=\"${3_instanceId}\" ${region_filter}",
+      "label": "Instance Filter",
+      "valuesToReadableStrings": {
+        "Label": "and InstanceId=\"${3_instanceId}\" ${region_filter}"
+      }
+    },
+    "region_filter": {
+      "parameterType": "SIMPLE",
+      "order": 16,
+      "defaultValue": "Label",
+      "hideFromView": true,
+      "value": "and accountId=\"${1_accountId}\" and Region=\"${2_region}\"",
+      "label": "Region Filter",
+      "valuesToReadableStrings": {
+        "Label": "and accountId=\"${1_accountId}\" and Region=\"${2_region}\""
+      }
+    },
+    "view": {
+      "parameterType": "LIST",
+      "valueOrdering": [
+        "Detailed View",
+        "Summarized View"
+      ],
+      "order": 20,
+      "defaultValue": "Summarized View",
+      "hideFromView": true,
+      "label": "view",
+      "valuesToReadableStrings": {
+        "Summarized View": "",
+        "Detailed View": ", sources, pointTags"
+      },
+      "allowAll": false
+    },
+    "nodes_group_by": {
+      "parameterType": "SIMPLE",
+      "order": 13,
+      "defaultValue": "Label",
+      "hideFromView": true,
+      "label": "nodes_group_by",
+      "valuesToReadableStrings": {
+        "Label": "none"
+      },
+      "allowAll": false
+    },
+    "node_name": {
+      "tagsBlackListRegex": "",
+      "parameterType": "DYNAMIC",
+      "tagKey": "nodename",
+      "queryValue": "limit(1000, ts(\"kubernetes.node.cpu.limit\", cluster=\"${cluster_name}\"))",
+      "order": 3,
+      "defaultValue": "Label",
+      "hideFromView": false,
+      "value": "*",
+      "label": "Node",
+      "dynamicFieldType": "TAG_KEY",
+      "valuesToReadableStrings": {
+        "Label": "*",
+        "Label_2": "ip-192-168-6-234.us-east-2.compute.internal",
+        "Label_3": "ip-192-168-65-196.us-east-2.compute.internal"
+      },
+      "allowAll": true,
+      "selectedLabel": "Label"
+    },
+    "application": {
+      "tagsBlackListRegex": "",
+      "parameterType": "DYNAMIC",
+      "tagKey": "application",
+      "queryValue": "sum(ts(~component.heartbeat, not \"_synthetic\"=\"true\" and service=petclinic-07-* and application!=defaultApp), application)",
+      "order": 5,
+      "defaultValue": "Label_2",
+      "hideFromView": false,
+      "value": "petclinic-tap",
+      "label": "application",
+      "dynamicFieldType": "TAG_KEY",
+      "valuesToReadableStrings": {
+        "Label": "*",
+        "Label_2": "petclinic-tap"
+      },
+      "allowAll": true,
+      "selectedLabel": "Label_2"
+    },
+    "cluster_name": {
+      "tagsBlackListRegex": "",
+      "parameterType": "DYNAMIC",
+      "tagKey": "cluster",
+      "queryValue": "max(ts(\"kubernetes.cluster.cpu.limit\" and cluster=\"tap*\"), cluster)",
+      "order": 1,
+      "defaultValue": "Label",
+      "hideFromView": false,
+      "value": "tap-to-eks-cluster-02",
+      "label": "Cluster",
+      "dynamicFieldType": "TAG_KEY",
+      "valuesToReadableStrings": {
+        "Label": "tap-to-eks-cluster-02"
+      },
+      "allowAll": false,
+      "selectedLabel": "Label"
+    },
+    "service": {
+      "tagsBlackListRegex": "",
+      "parameterType": "DYNAMIC",
+      "tagKey": "service",
+      "queryValue": "sum(ts(~component.heartbeat, application=\"${application}\" and not \"_synthetic\"=\"true\"), service)",
+      "order": 6,
+      "defaultValue": "Label",
+      "hideFromView": false,
+      "value": "*",
+      "label": "service",
+      "dynamicFieldType": "TAG_KEY",
+      "valuesToReadableStrings": {
+        "Label": "*",
+        "Label_2": "petclinic-07-00018-deployment",
+        "Label_3": "petclinic-07-00019-deployment",
+        "Label_4": "petclinic-07-00021-deployment",
+        "Label_5": "petclinic-07-00022-deployment"
+      },
+      "allowAll": true,
+      "selectedLabel": "Label"
+    },
+    "overview_filters": {
+      "parameterType": "LIST",
+      "valueOrdering": [
+        "default"
+      ],
+      "order": 15,
+      "defaultValue": "default",
+      "hideFromView": true,
+      "label": "overview-filters",
+      "valuesToReadableStrings": {
+        "default": "application=\"${application}\" and service=\"${service}\" and cluster=\"${cluster}\" and shard=\"${shard}\" and source=\"${source}\" and span.kind?=\"${spanKind}\""
+      },
+      "allowAll": false
+    },
+    "1_accountId": {
+      "tagsBlackListRegex": "",
+      "parameterType": "DYNAMIC",
+      "tagKey": "accountId",
+      "queryValue": "ts(\"aws.ec2.cpuutilization\")",
+      "order": 7,
+      "defaultValue": "Label",
+      "hideFromView": true,
+      "value": "847002470565",
+      "label": "Account ID",
+      "dynamicFieldType": "TAG_KEY",
+      "valuesToReadableStrings": {
+        "Label": "847002470565"
+      },
+      "allowAll": false,
+      "selectedLabel": "Label"
+    },
+    "cluster": {
+      "tagsBlackListRegex": "",
+      "parameterType": "DYNAMIC",
+      "tagKey": "cluster",
+      "queryValue": "collect(sum(ts(~component.heartbeat, application=\"${application}\" and service=\"${service}\" and not \"_synthetic\"=\"true\"), cluster), taggify(1, \"cluster\", \"*\"))",
+      "order": 11,
+      "defaultValue": "Label",
+      "hideFromView": true,
+      "value": "*",
+      "label": "cluster",
+      "dynamicFieldType": "TAG_KEY",
+      "valuesToReadableStrings": {
+        "Label": "*",
+        "Label_2": "none"
+      },
+      "allowAll": false,
+      "selectedLabel": "Label"
+    },
+    "source": {
+      "tagsBlackListRegex": "",
+      "parameterType": "DYNAMIC",
+      "tagKey": "",
+      "queryValue": "collect(sum(ts(~component.heartbeat, application=\"${application}\" and service=\"${service}\" and cluster=\"${cluster}\" and shard=\"${shard}\" and not \"_synthetic\"=\"true\"),sources), aliasSource(1, \"*\"))",
+      "order": 18,
+      "defaultValue": "Label",
+      "hideFromView": true,
+      "value": "*",
+      "label": "source",
+      "dynamicFieldType": "SOURCE",
+      "valuesToReadableStrings": {
+        "Label_2": "petclinic-07-00018-deployment-6cc97878b-8542j",
+        "Label_3": "petclinic-07-00019-deployment-84d56569db-698xt",
+        "Label_4": "petclinic-07-00019-deployment-84d56569db-9vjlj",
+        "Label_5": "petclinic-07-00019-deployment-84d56569db-pw8hw",
+        "Label_10": "petclinic-07-00021-deployment-5f7cc779fb-dk7hf",
+        "Label_6": "petclinic-07-00021-deployment-5f7cc779fb-25vh5",
+        "Label_11": "petclinic-07-00021-deployment-5f7cc779fb-lrjr4",
+        "Label_7": "petclinic-07-00021-deployment-5f7cc779fb-5qc7l",
+        "Label_12": "petclinic-07-00021-deployment-5f7cc779fb-pq2ph",
+        "Label_8": "petclinic-07-00021-deployment-5f7cc779fb-7m7pq",
+        "Label_13": "petclinic-07-00021-deployment-5f7cc779fb-tmzld",
+        "Label_9": "petclinic-07-00021-deployment-5f7cc779fb-7mccr",
+        "Label_14": "petclinic-07-00022-deployment-857799945c-zkkww",
+        "Label": "*"
+      },
+      "allowAll": false,
+      "selectedLabel": "Label"
+    },
+    "namespace": {
+      "tagsBlackListRegex": "",
+      "parameterType": "DYNAMIC",
+      "tagKey": "namespace_name",
+      "queryValue": "limit(1000, ts(\"kubernetes.ns.memory.usage\", cluster=\"${cluster_name}\"))",
+      "order": 2,
+      "defaultValue": "Label",
+      "hideFromView": false,
+      "value": "*",
+      "label": "Namespace",
+      "dynamicFieldType": "TAG_KEY",
+      "valuesToReadableStrings": {
+        "Label_2": "accelerator-system",
+        "Label_3": "api-portal",
+        "Label_30": "spring-boot-convention",
+        "Label_4": "app-live-view",
+        "Label_20": "kube-system",
+        "Label_31": "spring-ns-2",
+        "Label_5": "app-live-view-connector",
+        "Label_10": "cert-manager",
+        "Label_21": "learning-center-guided-ui",
+        "Label_32": "stacks-operator-system",
+        "Label_6": "app-live-view-conventions",
+        "Label_11": "conventions-system",
+        "Label_22": "learningcenter",
+        "Label_33": "tanzu-system-ingress",
+        "Label_7": "build-service",
+        "Label_12": "developer-conventions",
+        "Label_23": "metadata-store",
+        "Label_34": "tap-gui",
+        "Label_8": "cartographer-system",
+        "Label_13": "flux-system",
+        "Label_24": "opentelemetry-operator-system",
+        "Label_35": "tap-telemetry",
+        "Label_9": "cert-injection-webhook",
+        "Label_14": "image-policy-system",
+        "Label_25": "scan-link-system",
+        "Label_36": "tekton-pipelines",
+        "Label_15": "kapp-controller",
+        "Label_26": "secretgen-controller",
+        "Label_37": "triggermesh",
+        "Label_16": "knative-eventing",
+        "Label_27": "service-bindings",
+        "Label_38": "vmware-sources",
+        "Label_17": "knative-serving",
+        "Label_28": "services-toolkit",
+        "Label_39": "wavefront",
+        "Label_18": "knative-sources",
+        "Label_29": "source-system",
+        "Label_19": "kpack",
+        "Label": "*"
+      },
+      "allowAll": true,
+      "selectedLabel": "Label"
+    },
+    "3_instanceId": {
+      "tagsBlackListRegex": "",
+      "parameterType": "DYNAMIC",
+      "tagKey": "InstanceId",
+      "queryValue": "collect(ts(\"aws.ec2.statuscheckfailed_instance\" ${region_filter}), taggify(1, InstanceId, \"*\"))",
+      "order": 8,
+      "defaultValue": "Label",
+      "hideFromView": true,
+      "value": "*",
+      "label": "Instance ID",
+      "dynamicFieldType": "TAG_KEY",
+      "valuesToReadableStrings": {
+        "Label_2": "i-0047f3e45aa8c80c3",
+        "Label_3": "i-019fa7753bafc4eee",
+        "Label_30": "i-0e9a81e52e9a19d24",
+        "Label_4": "i-01b0b47c0db81a5d0",
+        "Label_20": "i-0add82bb9e77adb6f",
+        "Label_31": "i-0e9af52c230d37ccc",
+        "Label_5": "i-029dd6762572f97d5",
+        "Label_10": "i-052eb4f06f5ea8834",
+        "Label_21": "i-0ae18a8eec25aa830",
+        "Label_32": "i-0f0ded818d227b773",
+        "Label_6": "i-0379b19250bafbd02",
+        "Label_11": "i-0542f00bb3a41d65f",
+        "Label_22": "i-0b5715cfe938e4441",
+        "Label_33": "i-0f52186ab518bf7ac",
+        "Label_7": "i-03abb1b246a9e4d7f",
+        "Label_12": "i-05da2014466ea2992",
+        "Label_23": "i-0bfea336793b4a8c0",
+        "Label_34": "i-0f5502e9c3dd6166e",
+        "Label_8": "i-046630704305db9e6",
+        "Label_13": "i-05e984072179967ea",
+        "Label_24": "i-0cff5c8be86037a08",
+        "Label_35": "i-0fed1fe13f2d6eb68",
+        "Label_9": "i-05068d4e62f3f20a7",
+        "Label_14": "i-065556a7b0aa14b62",
+        "Label_25": "i-0daa2cdc819bb93d3",
+        "Label_15": "i-06c639b6ae0cde1cc",
+        "Label_26": "i-0e0290dcda02dc613",
+        "Label_16": "i-08395291d673f0954",
+        "Label_27": "i-0e23d9a9efce0b1aa",
+        "Label_17": "i-09b6a7d637881d454",
+        "Label_28": "i-0e519a404a1c5f54e",
+        "Label_18": "i-0a2203542a24375c1",
+        "Label_29": "i-0e59d14f416f08565",
+        "Label_19": "i-0a54b3c89fb3be09e",
+        "Label": "*"
+      },
+      "allowAll": true,
+      "selectedLabel": "Label"
+    },
+    "all_filters": {
+      "parameterType": "LIST",
+      "valueOrdering": [
+        "default"
+      ],
+      "order": 10,
+      "defaultValue": "default",
+      "hideFromView": true,
+      "label": "filters",
+      "valuesToReadableStrings": {
+        "default": "application=\"${application}\" and service=\"${service}\" and cluster=\"${cluster}\" and shard=\"${shard}\" and source=\"${source}\""
+      },
+      "allowAll": false
+    },
+    "spanKind": {
+      "tagsBlackListRegex": "",
+      "parameterType": "DYNAMIC",
+      "tagKey": "span.kind",
+      "queryValue": "collect(sum(ts(~component.heartbeat, application=\"${application}\" and service=\"${service}\" and cluster=\"${cluster}\" and shard=\"${shard}\" and not \"_synthetic\"=\"true\"), \"span.kind\"), taggify(1, \"span.kind\", \"*\"))",
+      "order": 19,
+      "defaultValue": "Label",
+      "hideFromView": true,
+      "value": "*",
+      "label": "spanKind",
+      "dynamicFieldType": "TAG_KEY",
+      "valuesToReadableStrings": {
+        "Label": "*",
+        "Label_2": "client",
+        "Label_3": "internal",
+        "Label_4": "server"
+      },
+      "allowAll": false,
+      "selectedLabel": "Label"
+    },
+    "nodes_metric": {
+      "parameterType": "SIMPLE",
+      "order": 14,
+      "defaultValue": "Label",
+      "hideFromView": true,
+      "label": "nodes_metric",
+      "valuesToReadableStrings": {
+        "Label": "CPU Usage"
+      },
+      "allowAll": false
+    },
+    "shard": {
+      "tagsBlackListRegex": "",
+      "parameterType": "DYNAMIC",
+      "tagKey": "shard",
+      "queryValue": "collect(sum(ts(~component.heartbeat, application=\"${application}\" and service=\"${service}\" and cluster=\"${cluster}\" and not \"_synthetic\"=\"true\"), shard), taggify(1, \"shard\", \"*\"))",
+      "order": 17,
+      "defaultValue": "Label",
+      "hideFromView": true,
+      "value": "*",
+      "label": "shard",
+      "dynamicFieldType": "TAG_KEY",
+      "valuesToReadableStrings": {
+        "Label": "*",
+        "Label_2": "none"
+      },
+      "allowAll": false,
+      "selectedLabel": "Label"
+    }
+  },
+  "disableRefreshInLiveMode": false
+}

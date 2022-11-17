@@ -1,0 +1,41 @@
+# To contribute improvements to CI/CD templates, please follow the Development guide at:
+# https://docs.gitlab.com/ee/development/cicd/templates.html
+# This specific template is located at:
+# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Terraform.gitlab-ci.yml
+variables:
+  WAVEFRONT_ADDRESS: $WAVEFRONT_ADDRESS
+  WAVEFRONT_TOKEN: $WAVEFRONT_TOKEN
+
+include:
+  - template: Terraform/Base.gitlab-ci.yml  # https://gitlab.com/gitlab-org/gitlab/blob/master/lib/gitlab/ci/templates/Terraform/Base.gitlab-ci.yml
+  - template: Jobs/SAST-IaC.gitlab-ci.yml   # https://gitlab.com/gitlab-org/gitlab/blob/master/lib/gitlab/ci/templates/Jobs/SAST-IaC.gitlab-ci.yml
+
+stages:
+  - validate
+  - test
+  - build
+  - deploy
+  - cleanup
+
+fmt:
+  extends: .terraform:fmt
+  before_script:
+    - cd ${CI_PROJECT_DIR}
+    - echo -e "terraform {\n  backend "http" {\n  }\n}" > backend.tf
+  needs: []
+
+validate:
+  extends: .terraform:validate
+  needs: []
+
+build:
+  extends: .terraform:build
+
+deploy:
+  extends: .terraform:deploy
+  dependencies:
+    - build
+  environment:
+    name: $TF_STATE_NAME
+
+
