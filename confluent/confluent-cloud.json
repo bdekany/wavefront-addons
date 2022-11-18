@@ -1,0 +1,1339 @@
+{
+  "name": "Confluent Cloud - Beta",
+  "url": "Confluent-Cloud--Beta",
+  "description": "",
+  "eventFilterType": "NONE",
+  "eventQuery": "",
+  "defaultTimeWindow": "",
+  "displayDescription": false,
+  "displaySectionTableOfContents": true,
+  "displayQueryParameters": true,
+  "sections": [
+    {
+      "name": "Confluent Cloud Dbrice",
+      "rows": [
+        {
+          "charts": [
+            {
+              "chartSettings": {
+                "plainMarkdownContent": "<clr-icon shape=\"network-globe\"></clr-icon> Global Metrics",
+                "fixedLegendFilterField": "CURRENT",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendPosition": "RIGHT",
+                "lineType": "linear",
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "type": "markdown-widget",
+                "tagMode": "all",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "New Chart",
+              "units": "Units",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 12,
+                  "h": 2
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "querybuilderEnabled": true,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": ""
+            }
+          ],
+          "heightFactor": 30
+        },
+        {
+          "charts": [
+            {
+              "chartSettings": {
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": true,
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "sparklineValueColorMapColors": [
+                  "rgba(224,34,0,1)",
+                  "rgba(87,170,19,1)",
+                  "rgba(224,34,0,1)"
+                ],
+                "fixedLegendPosition": "RIGHT",
+                "lineType": "linear",
+                "showHosts": true,
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "windowing": "full",
+                "sparklineDisplayColor": "rgba(255,255,255,1)",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                  10,
+                  100000000
+                ],
+                "sortValuesDescending": true,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "showLabels": true,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "y0UnitAutoscaling": true,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Write on topic (rate)",
+              "units": "Bps",
+              "summarization": "SUM",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": false,
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Write on topic (rate)"
+                },
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 2,
+                  "w": 2,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "sum(align(1m, sum , mavg(4m, ts(confluentcloud.confluent.kafka.server.received.bytes, job=${ccloud_job} and kafka.id=${ccloud_cluster} and topic=${ccloud_topic}))))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "Per-second average rate of ingress of data to topics, basic cluster has a max of 100MBps."
+            },
+            {
+              "chartSettings": {
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": true,
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "sparklineValueColorMapColors": [
+                  "rgba(224,34,0,1)",
+                  "rgba(87,170,19,1)",
+                  "rgba(224,34,0,1)"
+                ],
+                "fixedLegendPosition": "RIGHT",
+                "lineType": "linear",
+                "showHosts": true,
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "windowing": "full",
+                "sparklineDisplayColor": "rgba(255,255,255,1)",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                  10,
+                  100000000
+                ],
+                "sortValuesDescending": true,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "showLabels": true,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "y0UnitAutoscaling": true,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Read on topic (rate)",
+              "units": "Bps",
+              "summarization": "SUM",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": false,
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Read on topic (rate)"
+                },
+                "dashboardLayout": {
+                  "x": 2,
+                  "y": 2,
+                  "w": 2,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "sum(align(1m, sum , mavg(4m, ts(confluentcloud.confluent.kafka.server.sent.bytes, job=${ccloud_job} and kafka.id=${ccloud_cluster} and topic=${ccloud_topic}))))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "Per-second average rate of egress data to topics, basic cluster has a max of 100MBps."
+            },
+            {
+              "chartSettings": {
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": true,
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "sparklineDisplayPostfix": " req/s",
+                "sparklineValueColorMapColors": [
+                  "rgba(224,34,0,1)",
+                  "rgba(87,170,19,1)",
+                  "rgba(224,34,0,1)"
+                ],
+                "fixedLegendPosition": "RIGHT",
+                "lineType": "linear",
+                "showHosts": true,
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "windowing": "full",
+                "sparklineDisplayColor": "rgba(255,255,255,1)",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                  10,
+                  1500
+                ],
+                "sortValuesDescending": true,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "showLabels": true,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "y0UnitAutoscaling": true,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Requests (rate)",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": false,
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Requests per sec (rate)"
+                },
+                "dashboardLayout": {
+                  "x": 4,
+                  "y": 2,
+                  "w": 2,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "sum(align(1m, sum, mavg(4m, ts(confluentcloud.confluent.kafka.server.request.count , job=${ccloud_job} and kafka.id=${ccloud_cluster} and principal.id=${ccloud_principal}))))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "Per-second average rate of requests, basic cluster maxes out at 1500 requests per second."
+            },
+            {
+              "chartSettings": {
+                "fixedLegendFilterField": "CURRENT",
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "sparklineDisplayPostfix": "%",
+                "fixedLegendPosition": "RIGHT",
+                "lineType": "linear",
+                "showHosts": true,
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "windowing": "full",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sortValuesDescending": true,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "showLabels": true,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Write/Read Records %",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": false,
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Write/Read Records %"
+                },
+                "dashboardLayout": {
+                  "x": 6,
+                  "y": 2,
+                  "w": 2,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "sum(mavg(4m, ts(confluentcloud.confluent.kafka.server.received.records, job=${ccloud_job} and kafka.id=${ccloud_cluster} and topic=${ccloud_topic})))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                },
+                {
+                  "name": "B",
+                  "query": "sum(mavg(4m, ts(confluentcloud.confluent.kafka.server.sent.records, job=${ccloud_job} and kafka.id=${ccloud_cluster} and topic=${ccloud_topic})))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                },
+                {
+                  "name": "Percentage",
+                  "query": "(${A}/${B})/100",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "The percentage of records being written vs messages being read from the cluster."
+            }
+          ],
+          "heightFactor": 80
+        },
+        {
+          "charts": [
+            {
+              "chartSettings": {
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": true,
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "sparklineValueColorMapColors": [
+                  "#e02200",
+                  "#a36500",
+                  "rgba(0,154,219,1)"
+                ],
+                "fixedLegendPosition": "RIGHT",
+                "lineType": "linear",
+                "sparklineFillColor": "rgba(0,154,219,1)",
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "windowing": "full",
+                "sparklineDisplayColor": "rgba(255,255,255,1)",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                  10,
+                  100
+                ],
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "y0UnitAutoscaling": true,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineLineColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Retained bytes",
+              "units": "B",
+              "summarization": "SUM",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": false,
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Retained bytes"
+                },
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 6,
+                  "w": 2,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "sum(ts(confluentcloud.confluent.kafka.server.retained.bytes, job=${ccloud_job} and kafka.id=\"${ccloud_cluster}\" and topic=${ccloud_topic})) / 3",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "Basic clusters have a max retained bytes limit of 5 TB prior to replication. confluent_kafka_server_retained_bytes is after replication thus needs to be divided by 3."
+            },
+            {
+              "chartSettings": {
+                "fixedLegendFilterField": "CURRENT",
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "sparklineValueColorMapColors": [
+                  "#e02200",
+                  "rgba(87,170,19,1)",
+                  "rgba(224,34,0,1)"
+                ],
+                "fixedLegendPosition": "RIGHT",
+                "lineType": "linear",
+                "sparklineFillColor": "rgba(0,154,219,1)",
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "windowing": "full",
+                "sparklineDisplayColor": "rgba(255,255,255,1)",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                  10,
+                  2048
+                ],
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineLineColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "New Chart",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": false,
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Partition Count"
+                },
+                "dashboardLayout": {
+                  "x": 2,
+                  "y": 6,
+                  "w": 2,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "ts(confluentcloud.confluent.kafka.server.partition.count, job=${ccloud_job} and kafka.id=\"${ccloud_cluster}\")",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "The sum of partitions in a cluster. Basic cluster max partitions limit is 2048."
+            },
+            {
+              "chartSettings": {
+                "fixedLegendFilterField": "CURRENT",
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "sparklineValueColorMapColors": [
+                  "rgba(0,154,219,1)",
+                  "rgba(224,34,0,1)"
+                ],
+                "fixedLegendPosition": "RIGHT",
+                "lineType": "linear",
+                "sparklineFillColor": "rgba(0,154,219,1)",
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "windowing": "full",
+                "sparklineDisplayColor": "rgba(255,255,255,1)",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                  10
+                ],
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineLineColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Partition Count change",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": false,
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Partition Count change"
+                },
+                "dashboardLayout": {
+                  "x": 4,
+                  "y": 6,
+                  "w": 2,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "B",
+                  "query": "rawsum(abs(iDeltaInternal(4m, ts(confluentcloud.confluent.kafka.server.partition.count, job=${ccloud_job} and kafka.id=${ccloud_cluster}))))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": ""
+            },
+            {
+              "chartSettings": {
+                "fixedLegendFilterField": "CURRENT",
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "sparklineValueColorMapColors": [
+                  "rgba(224,34,0,1)",
+                  "rgba(87,170,19,1)",
+                  "rgba(224,34,0,1)"
+                ],
+                "fixedLegendPosition": "RIGHT",
+                "lineType": "linear",
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "windowing": "full",
+                "sparklineDisplayColor": "rgba(255,255,255,1)",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                  10,
+                  1000
+                ],
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Active connections",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": false,
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "Active Connections"
+                },
+                "dashboardLayout": {
+                  "x": 6,
+                  "y": 6,
+                  "w": 4,
+                  "h": 4
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "sum(ts(confluentcloud.confluent.kafka.server.active.connection.count, job=${ccloud_job} and kafka.id=\"${ccloud_cluster}\" and principal.id=\"${ccloud_principal}\"))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "The number of active connections to a cluster. Basic clusters limit active connections to 1000."
+            }
+          ],
+          "heightFactor": 80
+        },
+        {
+          "charts": [
+            {
+              "chartSettings": {
+                "plainMarkdownContent": "<clr-icon shape=\"network-globe\"></clr-icon> Topic Metrics",
+                "fixedLegendFilterField": "CURRENT",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendPosition": "RIGHT",
+                "lineType": "linear",
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "type": "markdown-widget",
+                "tagMode": "all",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "New Chart",
+              "units": "Units",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 10,
+                  "w": 12,
+                  "h": 2
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "querybuilderEnabled": true,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": ""
+            }
+          ],
+          "heightFactor": 30
+        },
+        {
+          "charts": [
+            {
+              "chartSettings": {
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": true,
+                "sparklineDisplayFontSize": "150",
+                "expectedDataSpacing": 1200,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [
+                  "topic",
+                  "kafka.id"
+                ],
+                "lineType": "linear",
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "windowing": "full",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sortValuesDescending": true,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "line",
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "y0UnitAutoscaling": true,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Bytes Retained by Topic",
+              "units": "B",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "topK": {
+                  "labelBy": [
+                    "kafka.id",
+                    "topic"
+                  ]
+                },
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": true,
+                  "sparklineDisplayLabel": "Schema Count",
+                  "sparklineDisplaySubLabel": "Schema Count"
+                },
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 12,
+                  "w": 4,
+                  "h": 4
+                },
+                "y0ScaleDecimal": true
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "sum(ts(confluentcloud.confluent.kafka.server.retained.bytes, kafka.id=\"${ccloud_cluster}\" and job=${ccloud_job} and topic=${ccloud_topic}), topic, kafka.id)",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "The current count of bytes retained by the cluster, summed across all partitions. The count is sampled every 60 seconds."
+            },
+            {
+              "chartSettings": {
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": true,
+                "sparklineDisplayFontSize": "150",
+                "expectedDataSpacing": 1200,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendPosition": "RIGHT",
+                "lineType": "linear",
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "windowing": "full",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sortValuesDescending": true,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "line",
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "y0UnitAutoscaling": true,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Bytes Received by Topic",
+              "units": "B",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "topK": {
+                  "labelBy": [
+                    "kafka.id",
+                    "topic"
+                  ]
+                },
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": true,
+                  "sparklineDisplayLabel": "Schema Count",
+                  "sparklineDisplaySubLabel": "Schema Count"
+                },
+                "dashboardLayout": {
+                  "x": 4,
+                  "y": 12,
+                  "w": 4,
+                  "h": 4
+                },
+                "y0ScaleDecimal": true
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "sum(ts(confluentcloud.confluent.kafka.server.received.bytes, kafka.id=\"${ccloud_cluster}\" and job=${ccloud_job} and topic=${ccloud_topic}), topic)",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "The delta count of bytes received from the network. Each sample is the number of bytes received since the previous data sample. The count is sampled every 60 seconds."
+            },
+            {
+              "chartSettings": {
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": true,
+                "sparklineDisplayFontSize": "150",
+                "expectedDataSpacing": 1200,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendPosition": "RIGHT",
+                "lineType": "linear",
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "windowing": "full",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sortValuesDescending": true,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "line",
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "y0UnitAutoscaling": true,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Bytes Sent by Topic",
+              "units": "B",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "topK": {
+                  "labelBy": [
+                    "kafka.id",
+                    "topic"
+                  ]
+                },
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": true,
+                  "sparklineDisplayLabel": "Schema Count",
+                  "sparklineDisplaySubLabel": "Schema Count"
+                },
+                "dashboardLayout": {
+                  "x": 8,
+                  "y": 12,
+                  "w": 4,
+                  "h": 4
+                },
+                "y0ScaleDecimal": true
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "sum(ts(confluentcloud.confluent.kafka.server.sent.bytes, kafka.id=\"${ccloud_cluster}\" and job=${ccloud_job} and topic=${ccloud_topic}), topic, kafka.id)",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "The delta count of bytes sent over the network. Each sample is the number of bytes sent since the previous data point. The count is sampled every 60 seconds."
+            }
+          ],
+          "heightFactor": 80
+        },
+        {
+          "charts": [
+            {
+              "chartSettings": {
+                "fixedLegendFilterField": "CURRENT",
+                "sparklineDisplayFontSize": "150",
+                "fixedLegendFilterLimit": 5,
+                "sparklineDisplayPostfix": " req/s",
+                "fixedLegendPosition": "RIGHT",
+                "lineType": "linear",
+                "showHosts": true,
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "windowing": "full",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sortValuesDescending": true,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "showLabels": true,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Request Rate per minute",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "decimalPrecision": 0,
+                "topK": {
+                  "labelBy": [
+                    "kafka.id",
+                    "topic"
+                  ]
+                },
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": true,
+                  "sparklineDisplayLabel": "Schema Count",
+                  "sparklineDisplaySubLabel": "Request Rate"
+                },
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 16,
+                  "w": 4,
+                  "h": 4
+                },
+                "y0ScaleDecimal": true
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "sum(ts(confluentcloud.confluent.kafka.server.request.count, kafka.id=\"${ccloud_cluster}\" and job=${ccloud_job} and principal.id=${ccloud_principal}))",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "The delta count of requests received over the network. Each sample is the number of requests received since the previous data point. The count sampled every 60 seconds."
+            },
+            {
+              "chartSettings": {
+                "fixedLegendFilterField": "CURRENT",
+                "sparklineDisplayFontSize": "150",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendPosition": "RIGHT",
+                "lineType": "linear",
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "windowing": "full",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sortValuesDescending": true,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "line",
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "y0UnitAutoscaling": true,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Record Received by Topic",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "decimalPrecision": 0,
+                "topK": {
+                  "labelBy": [
+                    "kafka.id",
+                    "topic"
+                  ]
+                },
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": true,
+                  "sparklineDisplayLabel": "Schema Count",
+                  "sparklineDisplaySubLabel": "Schema Count"
+                },
+                "dashboardLayout": {
+                  "x": 4,
+                  "y": 16,
+                  "w": 4,
+                  "h": 4
+                },
+                "y0ScaleDecimal": true
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "sum(ts(confluentcloud.confluent.kafka.server.received.records, kafka.id=\"${ccloud_cluster}\" and job=${ccloud_job} and topic=${ccloud_topic}), topic, kafka.id)",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": ""
+            },
+            {
+              "chartSettings": {
+                "fixedLegendFilterField": "CURRENT",
+                "sparklineDisplayFontSize": "150",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendPosition": "RIGHT",
+                "lineType": "linear",
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "windowing": "full",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sortValuesDescending": true,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "line",
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "all",
+                "y0UnitAutoscaling": true,
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Topic Sent by Topic",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "decimalPrecision": 0,
+                "topK": {
+                  "labelBy": [
+                    "kafka.id",
+                    "topic"
+                  ]
+                },
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": true,
+                  "sparklineDisplayLabel": "Schema Count",
+                  "sparklineDisplaySubLabel": "Schema Count"
+                },
+                "dashboardLayout": {
+                  "x": 8,
+                  "y": 16,
+                  "w": 4,
+                  "h": 4
+                },
+                "y0ScaleDecimal": true
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "sum(ts(confluentcloud.confluent.kafka.server.sent.records, kafka.id=\"${ccloud_cluster}\" and job=${ccloud_job} and topic=${ccloud_topic}), topic, kafka.id)",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": ""
+            }
+          ],
+          "heightFactor": 80
+        },
+        {
+          "charts": [
+            {
+              "chartSettings": {
+                "plainMarkdownContent": "<clr-icon shape=\"network-globe\"></clr-icon> Registry Metrics",
+                "fixedLegendFilterField": "CURRENT",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendPosition": "RIGHT",
+                "lineType": "linear",
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "type": "markdown-widget",
+                "tagMode": "all",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "New Chart",
+              "units": "Units",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 20,
+                  "w": 12,
+                  "h": 2
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "querybuilderEnabled": true,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": ""
+            }
+          ],
+          "heightFactor": 30
+        },
+        {
+          "charts": [
+            {
+              "chartSettings": {
+                "fixedLegendEnabled": true,
+                "fixedLegendFilterField": "CURRENT",
+                "sparklineDisplayFontSize": "150",
+                "expectedDataSpacing": 1200,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [
+                  "schema.registry.id"
+                ],
+                "lineType": "linear",
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "windowing": "full",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "sortValuesDescending": true,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "line",
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "tagMode": "custom",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "includeObsoleteMetrics": false,
+              "name": "Schema count",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "decimalPrecision": 0,
+                "topK": {
+                  "labelBy": [
+                    "kafka.id",
+                    "topic",
+                    "schema.registry.id"
+                  ]
+                },
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": true,
+                  "sparklineDisplayLabel": "Schema Count",
+                  "sparklineDisplaySubLabel": "Schema Count"
+                },
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 22,
+                  "w": 12,
+                  "h": 4
+                },
+                "y0ScaleDecimal": true
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "ts(confluentcloud.confluent.kafka.schema.registry.schema.count, job=${ccloud_job} and schema.registry.id=${ccloud_registry})",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": "The delta count of requests received over the network. Each sample is the number of requests received since the previous data point. The count sampled every 60 seconds."
+            }
+          ],
+          "heightFactor": 80
+        }
+      ]
+    }
+  ],
+  "parameterDetails": {
+    "ccloud_principal": {
+      "parameterType": "DYNAMIC",
+      "tagKey": "principal.id",
+      "queryValue": "ts(\"confluentcloud.confluent.kafka.server.request.count\", job=${ccloud_job} and kafka.id=${ccloud_cluster})",
+      "order": 3,
+      "defaultValue": "Label",
+      "hideFromView": false,
+      "value": "*",
+      "label": "Principal",
+      "dynamicFieldType": "TAG_KEY",
+      "valuesToReadableStrings": {
+        "Label": "*"
+      },
+      "selectedLabel": "Label"
+    },
+    "ccloud_registry": {
+      "parameterType": "DYNAMIC",
+      "tagKey": "schema.registry.id",
+      "queryValue": "ts(\"confluentcloud.confluent.kafka.schema.registry.schema.count\", job=${ccloud_job})",
+      "order": 4,
+      "defaultValue": "Label",
+      "hideFromView": false,
+      "value": "*",
+      "label": "Registry",
+      "dynamicFieldType": "TAG_KEY",
+      "valuesToReadableStrings": {
+        "Label": "*"
+      },
+      "selectedLabel": "Label"
+    },
+    "ccloud_job": {
+      "parameterType": "DYNAMIC",
+      "tagKey": "job",
+      "queryValue": "limit(1000, ts(confluentcloud.confluent.kafka.server.retained.bytes))",
+      "order": 2,
+      "defaultValue": "Label",
+      "hideFromView": false,
+      "value": "Confluent",
+      "label": "Prometheus Job",
+      "dynamicFieldType": "TAG_KEY",
+      "valuesToReadableStrings": {
+        "Label": "Confluent"
+      },
+      "selectedLabel": "Label"
+    },
+    "ccloud_topic": {
+      "parameterType": "DYNAMIC",
+      "tagKey": "topic",
+      "queryValue": "ts(\"confluentcloud.confluent.kafka.server.retained.bytes\", job=${ccloud_job} and kafka.id=${ccloud_cluster})",
+      "order": 5,
+      "defaultValue": "Label",
+      "hideFromView": false,
+      "value": "*",
+      "label": "Topic",
+      "dynamicFieldType": "TAG_KEY",
+      "valuesToReadableStrings": {
+        "Label": "*"
+      },
+      "selectedLabel": "Label"
+    },
+    "ccloud_cluster": {
+      "parameterType": "DYNAMIC",
+      "tagKey": "kafka.id",
+      "queryValue": "ts(\"confluentcloud.confluent.kafka.server.retained.bytes\", job=${ccloud_job})",
+      "order": 1,
+      "defaultValue": "Label_2",
+      "hideFromView": false,
+      "value": "lkc-nvy02d",
+      "label": "Confluent Cluster",
+      "dynamicFieldType": "TAG_KEY",
+      "valuesToReadableStrings": {
+        "Label_2": "lkc-nvy02d"
+      },
+      "selectedLabel": "Label_2"
+    }
+  }
+}

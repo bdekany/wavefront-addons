@@ -6,9 +6,17 @@ terraform {
   }
 }
 
+
+variable "dashboards" {
+  type = list
+  description = "Paths to Dashboards JSON files"
+  # default = ["./kubernetes/kube-deprecated-api.json"]
+}
+
 provider "wavefront" {
 }
 
-resource "wavefront_dashboard_json" "test_dashboard_json" {
-  dashboard_json = file("./kubernetes/ingress-nginx-controller.json")
+resource "wavefront_dashboard_json" "dashboard_from_list" {
+  for_each = toset( var.dashboards)
+  dashboard_json = file(each.key)
 }
