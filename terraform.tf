@@ -6,6 +6,16 @@ terraform {
   }
 }
 
+variable "WAVEFRONT_ADDRESS" {
+  type = string
+  description = "URL to your wavefont tenant ex: longboard.wavefront.com"
+  default = "longboard.wavefront.com"
+}
+
+variable "WAVEFRONT_TOKEN" {
+  type = string
+  description = "API Token"
+}
 
 variable "dashboards" {
   type = list
@@ -14,6 +24,8 @@ variable "dashboards" {
 }
 
 provider "wavefront" {
+  address = var.WAVEFRONT_ADDRESS
+  token = var.WAVEFRONT_TOKEN
 }
 
 resource "wavefront_dashboard_json" "dashboard_from_list" {

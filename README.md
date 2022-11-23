@@ -33,3 +33,12 @@ Based on [K8S Blog about deprecation](https://kubernetes.io/blog/2020/09/03/warn
 Requirements: collect apiServer Metrics `collector.apiServerMetrics=true`
 
 ![Kube Deprecated API Dashboard preview](images/kube-deprecated-api.png)
+
+
+## Terraform
+
+```sh
+$ export TF_VAR_WAVEFRONT_ADDRESS="cluster.wavefront.com"
+$ export TF_VAR_WAVEFRONT_TOKEN="your-wf-token-secret"
+$ terraform plan
+```
