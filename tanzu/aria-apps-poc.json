@@ -1,0 +1,1254 @@
+{
+"name": "Aria Apps POC",
+"url": "aria-apps-poc-community",
+"eventFilterType": "NONE",
+"displayDescription": false,
+"displaySectionTableOfContents": true,
+"displayQueryParameters": true,
+"sections": [
+    {
+    "name": "Proof of Concept",
+    "id": "untitled-dashboard-section-1",
+    "rows": [
+        {
+        "charts": [
+            {
+            "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "<img src=\"https://blogs.vmware.com/management/files/2022/08/vmw-prod-icon-aria-cmyk_horiz-1024x348.png\" style=\"width:200px\"/>\n\nThis demonstration shows how Aria Operations for Applications can provide realtime views of the status and performance of Kubernetes clusters and its workloads.\n\nThis demonstration will show:\n * How to invite your team to collaborate\n * How the collector is deployed to a Kubernetes cluster\n * The default dashboards and alerts the provide visibility to the Kubernetes cluster\n * How Aria Operations for Applications can provide insights into how each transaction performs within the application with Open Telemetry",
+                "autoColumnTags": false,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+            },
+            "includeObsoleteMetrics": false,
+            "name": "Welcome",
+            "units": "Units",
+            "base": 0,
+            "chartAttributes": {
+                "dashboardLayout": {
+                "x": 0,
+                "y": 0,
+                "w": 9,
+                "h": 6
+                }
+            },
+            "sources": [
+                {
+                "name": "A",
+                "query": "",
+                "secondaryAxis": false,
+                "queryType": "WQL",
+                "querybuilderEnabled": true,
+                "querybuilderSerialization": "{\"_v\":1,\"metric\":\"\",\"filters\":[[],\"and\"],\"functions\":[]}",
+                "sourceDescription": "",
+                "scatterPlotSource": "Y"
+                }
+            ],
+            "noDefaultEvents": false
+            },
+            {
+            "anomalySeverity": "medium",
+            "anomalyDetectionOn": false,
+            "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "## At the end of the Proof of Concept all the charts below should be green",
+                "autoColumnTags": false,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+            },
+            "displayConfidenceBounds": false,
+            "includeObsoleteMetrics": false,
+            "filterOutNonAnomalies": false,
+            "name": "Info",
+            "anomalySampleSize": "8",
+            "units": "Units",
+            "summarization": "MEAN",
+            "base": 0,
+            "chartAttributes": {
+                "dashboardLayout": {
+                "x": 9,
+                "y": 0,
+                "w": 3,
+                "h": 6
+                }
+            },
+            "sources": [
+                {
+                "sourceDescription": "",
+                "queryType": "WQL",
+                "query": "",
+                "name": "A",
+                "querybuilderEnabled": true,
+                "secondaryAxis": false,
+                "scatterPlotSource": "Y",
+                "disabled": false,
+                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}"
+                }
+            ],
+            "noDefaultEvents": false,
+            "anomalyType": "both"
+            }
+        ],
+        "heightFactor": 120
+        },
+        {
+        "charts": [
+            {
+            "anomalySeverity": "medium",
+            "anomalyDetectionOn": false,
+            "chartSettings": {
+                "plainMarkdownContent": "### Access to Aria Operations for Application (Tanzu Observability)\n\nThe primary user account has been created by VMware team.\n\nYou are now able to access the Web UI and can complete the [Wavefront Tour](/dashboards/tour-intro) and [Tutorial](/integration/tutorial/content)\n\nYou are able to **invite more team members** to your tenant. **Click on the link on the right** ==>\n\n[User Management Docs](https://docs.wavefront.com/user-accounts.html)\n\n<hr/>\n\n<img src=\"https://www.vmware.com/etc/clientlibs/vmwaredevapp/clientlib-nav-redesign/images/vm-logo.png\" style=\"width:80px\"/>  ",
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "type": "markdown-widget",
+                "y1UnitAutoscaling": false,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+            },
+            "displayConfidenceBounds": false,
+            "includeObsoleteMetrics": false,
+            "filterOutNonAnomalies": false,
+            "name": "#1 Access and Users",
+            "anomalySampleSize": "8",
+            "units": "Units",
+            "summarization": "MEAN",
+            "base": 0,
+            "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                "x": 0,
+                "y": 6,
+                "w": 6,
+                "h": 7
+                }
+            },
+            "sources": [
+                {
+                "name": "A",
+                "query": "",
+                "disabled": false,
+                "secondaryAxis": false,
+                "queryType": "WQL",
+                "querybuilderEnabled": true,
+                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}"
+                }
+            ],
+            "noDefaultEvents": false,
+            "anomalyType": "both"
+            },
+            {
+            "anomalySeverity": "medium",
+            "anomalyDetectionOn": false,
+            "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "\n\n\n<p align=\"center\">\n<img src=\"https://i.ibb.co/NxtP993/Capture-d-e-cran-2022-11-25-a-16-30-08.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"/users/invite\" target=\"_blank\">Invite team members</a>\n",
+                "autoColumnTags": false,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+            },
+            "displayConfidenceBounds": false,
+            "includeObsoleteMetrics": false,
+            "filterOutNonAnomalies": false,
+            "name": "Invite team members",
+            "anomalySampleSize": "8",
+            "units": "Units",
+            "summarization": "MEAN",
+            "base": 0,
+            "chartAttributes": {
+                "dashboardLayout": {
+                "x": 6,
+                "y": 6,
+                "w": 3,
+                "h": 7
+                }
+            },
+            "sources": [
+                {
+                "sourceDescription": "",
+                "queryType": "WQL",
+                "query": "",
+                "name": "A",
+                "querybuilderEnabled": true,
+                "secondaryAxis": false,
+                "scatterPlotSource": "Y",
+                "disabled": false,
+                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}"
+                }
+            ],
+            "noDefaultEvents": false,
+            "anomalyType": "both"
+            },
+            {
+            "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "sparklineValueColorMapColors": [
+                "#e02200",
+                "rgba(87,170,19,1)"
+                ],
+                "showValueColumn": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "groupBySource": false,
+                "windowing": "full",
+                "sparklineSize": "NONE",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                1
+                ],
+                "y1Units": "",
+                "sparklineValueTextMapThresholds": [
+                0
+                ],
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "sparklineValueTextMapText": [
+                "No Account",
+                "First account registered"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+            },
+            "includeObsoleteMetrics": false,
+            "name": "New Chart",
+            "base": 0,
+            "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                "sparklineDisplayLabel": "A",
+                "sparklineDisplaySubLabel": "",
+                "commaDelimited": false
+                },
+                "dashboardLayout": {
+                "x": 9,
+                "y": 6,
+                "w": 3,
+                "h": 3
+                },
+                "y0ScaleDecimal": true
+            },
+            "sources": [
+                {
+                "name": "A",
+                "query": "ts(~wavefront.users.total)",
+                "disabled": false,
+                "secondaryAxis": false,
+                "queryType": "WQL",
+                "querybuilderEnabled": false
+                }
+            ],
+            "noDefaultEvents": false
+            }
+        ],
+        "heightFactor": 110
+        },
+        {
+        "charts": [
+            {
+            "anomalySeverity": "medium",
+            "anomalyDetectionOn": false,
+            "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "sparklineValueColorMapColors": [
+                "#e02200",
+                "rgba(87,170,19,1)"
+                ],
+                "showValueColumn": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "groupBySource": false,
+                "windowing": "full",
+                "sparklineSize": "NONE",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                2
+                ],
+                "y1Units": "",
+                "sparklineValueTextMapThresholds": [
+                2
+                ],
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "sparklineValueTextMapText": [
+                "Invite Team members",
+                "Ok"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+            },
+            "displayConfidenceBounds": false,
+            "includeObsoleteMetrics": false,
+            "filterOutNonAnomalies": false,
+            "name": "New Chart",
+            "anomalySampleSize": "8",
+            "summarization": "MEAN",
+            "base": 0,
+            "chartAttributes": {
+                "lineFill": 0,
+                "singleStat": {
+                "sparklineDisplayLabel": "A",
+                "sparklineDisplaySubLabel": ""
+                },
+                "dashboardLayout": {
+                "x": 9,
+                "y": 9,
+                "w": 3,
+                "h": 4
+                },
+                "y0ScaleDecimal": false
+            },
+            "sources": [
+                {
+                "name": "A",
+                "query": "ts(~wavefront.users.total)",
+                "disabled": false,
+                "secondaryAxis": false,
+                "queryType": "WQL",
+                "querybuilderEnabled": false,
+                "sourceDescription": ""
+                }
+            ],
+            "noDefaultEvents": false,
+            "anomalyType": "both"
+            }
+        ],
+        "heightFactor": 80
+        },
+        {
+        "charts": [
+            {
+            "anomalySeverity": "medium",
+            "anomalyDetectionOn": false,
+            "chartSettings": {
+                "plainMarkdownContent": "**First**, let's install our Kubernetes Collector on your Cluster.\n\nThe Collector for Kubernetes is an agent that runs as a DaemonSet on each node within a Kubernetes cluster.\n\nMultiple sources of metrics providing comprehensive insight:\n * Kubernetes (kubelet) source: For core kubernetes metrics\n * Prometheus source: For scraping prometheus metric endpoints (API server, etcd, NGINX etc)\n * Kubernetes state source: For resource state metrics\n * Auto discovery of pods and services based on annotation and configuration\n<br/>\n\n**Click in the links** on the right to show how to set up the K8s collector, the out of the box dashboards, pre-defined SLIs/SLOs and pre-defined alerts.\n\n[Kubernetes Integration Docs](https://docs.wavefront.com/wavefront_kubernetes.html)",
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "type": "markdown-widget",
+                "y1UnitAutoscaling": false,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+            },
+            "displayConfidenceBounds": false,
+            "includeObsoleteMetrics": false,
+            "filterOutNonAnomalies": false,
+            "name": "#2 Collector installation",
+            "anomalySampleSize": "8",
+            "units": "Units",
+            "summarization": "MEAN",
+            "base": 0,
+            "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                "x": 0,
+                "y": 13,
+                "w": 6,
+                "h": 7
+                }
+            },
+            "sources": [
+                {
+                "name": "A",
+                "query": "",
+                "disabled": false,
+                "secondaryAxis": false,
+                "queryType": "WQL",
+                "querybuilderEnabled": true,
+                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}"
+                }
+            ],
+            "noDefaultEvents": false,
+            "anomalyType": "both"
+            },
+            {
+            "anomalySeverity": "medium",
+            "anomalyDetectionOn": false,
+            "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "<p align=\"center\">\n<img src=\"https://i.ibb.co/1KfP6T0/setup.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"/integration/kubernetes/setup\" target=\"_blank\">setup K8s collector</a>\n",
+                "autoColumnTags": false,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+            },
+            "displayConfidenceBounds": false,
+            "includeObsoleteMetrics": false,
+            "filterOutNonAnomalies": false,
+            "name": "setup K8s collector",
+            "anomalySampleSize": "8",
+            "units": "Units",
+            "summarization": "MEAN",
+            "base": 0,
+            "chartAttributes": {
+                "dashboardLayout": {
+                "x": 6,
+                "y": 13,
+                "w": 3,
+                "h": 7
+                }
+            },
+            "sources": [
+                {
+                "sourceDescription": "",
+                "queryType": "WQL",
+                "query": "",
+                "name": "A",
+                "querybuilderEnabled": true,
+                "secondaryAxis": false,
+                "scatterPlotSource": "Y",
+                "disabled": false,
+                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}"
+                }
+            ],
+            "noDefaultEvents": false,
+            "anomalyType": "both"
+            },
+            {
+            "anomalySeverity": "medium",
+            "anomalyDetectionOn": false,
+            "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "sparklineValueColorMapColors": [
+                "#e02200",
+                "rgba(87,170,19,1)"
+                ],
+                "showValueColumn": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "groupBySource": false,
+                "windowing": "full",
+                "sparklineSize": "NONE",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                1
+                ],
+                "y1Units": "",
+                "sparklineValueTextMapThresholds": [],
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "sparklineValueTextMapText": [
+                "new highest"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+            },
+            "displayConfidenceBounds": false,
+            "includeObsoleteMetrics": false,
+            "filterOutNonAnomalies": false,
+            "name": "New Chart",
+            "anomalySampleSize": "8",
+            "units": "",
+            "summarization": "MEAN",
+            "base": 0,
+            "chartAttributes": {
+                "lineFill": 0,
+                "singleStat": {
+                "sparklineDisplayLabel": "A",
+                "sparklineDisplaySubLabel": "Kubernetes Cluster(s) Connected"
+                },
+                "dashboardLayout": {
+                "x": 9,
+                "y": 13,
+                "w": 3,
+                "h": 7
+                },
+                "y0ScaleDecimal": false
+            },
+            "sources": [
+                {
+                "name": "A",
+                "query": "ts(~wavefront.kubernetes.clusters.total)",
+                "disabled": false,
+                "secondaryAxis": false,
+                "queryType": "WQL",
+                "querybuilderEnabled": false,
+                "sourceDescription": ""
+                }
+            ],
+            "noDefaultEvents": false,
+            "anomalyType": "both"
+            }
+        ],
+        "heightFactor": 140
+        },
+        {
+        "charts": [
+            {
+            "anomalySeverity": "medium",
+            "anomalyDetectionOn": false,
+            "chartSettings": {
+                "plainMarkdownContent": "Let's take a look at the 'out of the box' experience when using Aria Operations for Applications for Kubernetes.\n\nOut of the box Dashboards have been built to help you and your team get instant value:\n * Summary of all Kubernetes Clusters\n * Monitor Kubernetes Clusters\n * Monitor Kubernetes control plane\n * Monitor Kubernetes Nodes\n * Monitor Kubernetes Namespaces\n * Monitor Kubernetes Pods\n * Monitor Kubernetes Containers\n\n**Click in the links** on the right to visit our out of the box dashboards and pre-defined SLIs/SLOs.\n",
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "type": "markdown-widget",
+                "y1UnitAutoscaling": false,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+            },
+            "displayConfidenceBounds": false,
+            "includeObsoleteMetrics": false,
+            "filterOutNonAnomalies": false,
+            "name": "#3 Dashboards",
+            "anomalySampleSize": "8",
+            "units": "Units",
+            "summarization": "MEAN",
+            "base": 0,
+            "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                "x": 0,
+                "y": 20,
+                "w": 6,
+                "h": 7
+                }
+            },
+            "sources": [
+                {
+                "name": "A",
+                "query": "",
+                "disabled": false,
+                "secondaryAxis": false,
+                "queryType": "WQL",
+                "querybuilderEnabled": true,
+                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}"
+                }
+            ],
+            "noDefaultEvents": false,
+            "anomalyType": "both"
+            },
+            {
+            "anomalySeverity": "medium",
+            "anomalyDetectionOn": false,
+            "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "<p align=\"center\">\n<img src=\"https://i.ibb.co/QvtwFSc/Dashboards.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"https://kibo.wavefront.com/integration/kubernetes/content\" target=\"_blank\">Pre defined Dashboards</a>",
+                "autoColumnTags": false,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+            },
+            "displayConfidenceBounds": false,
+            "includeObsoleteMetrics": false,
+            "filterOutNonAnomalies": false,
+            "name": "Pre defined Dashboards",
+            "anomalySampleSize": "8",
+            "units": "Units",
+            "summarization": "MEAN",
+            "base": 0,
+            "chartAttributes": {
+                "dashboardLayout": {
+                "x": 6,
+                "y": 20,
+                "w": 3,
+                "h": 7
+                }
+            },
+            "sources": [
+                {
+                "sourceDescription": "",
+                "queryType": "WQL",
+                "query": "",
+                "name": "A",
+                "querybuilderEnabled": true,
+                "secondaryAxis": false,
+                "scatterPlotSource": "Y",
+                "disabled": false,
+                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}"
+                }
+            ],
+            "noDefaultEvents": false,
+            "anomalyType": "both"
+            },
+            {
+            "anomalySeverity": "medium",
+            "anomalyDetectionOn": false,
+            "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "showValueColumn": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "groupBySource": false,
+                "windowing": "full",
+                "sparklineSize": "BACKGROUND",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "sparklineValueTextMapThresholds": [],
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "top-k",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "sparklineValueTextMapText": [],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+            },
+            "displayConfidenceBounds": false,
+            "includeObsoleteMetrics": false,
+            "filterOutNonAnomalies": false,
+            "name": "Gotta Catch ‘Em All!",
+            "anomalySampleSize": "8",
+            "units": "%",
+            "summarization": "MEAN",
+            "base": 0,
+            "chartAttributes": {
+                "decimalPrecision": 0,
+                "topK": {
+                "labelBy": [
+                    "user"
+                ]
+                },
+                "lineFill": 1,
+                "colorMap": {
+                "colors": [
+                    "#e02200",
+                    "#ffc60a",
+                    "#57aa13"
+                ],
+                "values": [
+                    1,
+                    50
+                ]
+                },
+                "singleStat": {
+                "sparklineDisplayLabel": "A",
+                "sparklineDisplaySubLabel": "New Chart"
+                },
+                "dashboardLayout": {
+                "x": 9,
+                "y": 20,
+                "w": 3,
+                "h": 7
+                },
+                "y0ScaleDecimal": false
+            },
+            "sources": [
+                {
+                "name": "A",
+                "query": "count(last(ts(\"~ui.dashboards.integration-kubernetes-*\")), user) / 0.08 ",
+                "disabled": false,
+                "secondaryAxis": false,
+                "queryType": "WQL",
+                "querybuilderEnabled": false,
+                "sourceDescription": ""
+                }
+            ],
+            "noDefaultEvents": false,
+            "anomalyType": "both"
+            }
+        ],
+        "heightFactor": 140
+        },
+        {
+        "charts": [
+            {
+            "anomalySeverity": "medium",
+            "anomalyDetectionOn": false,
+            "chartSettings": {
+                "plainMarkdownContent": "Dashboards are great but what about Alerts?\n\nAria Operations for Applications also provides out of the box Alerts for Kubernetes.\n\nNotifications can be sent by e-mails, MS Teams, Slack Channel or Webhooks.\n\n**Click in the link on the right** to access to the integration page and click the <button class=\"btn btn-success\">Install All</button> button",
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "type": "markdown-widget",
+                "y1UnitAutoscaling": false,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+            },
+            "displayConfidenceBounds": false,
+            "includeObsoleteMetrics": false,
+            "filterOutNonAnomalies": false,
+            "name": "#4 Alerts",
+            "anomalySampleSize": "8",
+            "units": "Units",
+            "summarization": "MEAN",
+            "base": 0,
+            "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                "x": 0,
+                "y": 27,
+                "w": 6,
+                "h": 7
+                }
+            },
+            "sources": [
+                {
+                "name": "A",
+                "query": "",
+                "disabled": false,
+                "secondaryAxis": false,
+                "queryType": "WQL",
+                "querybuilderEnabled": true,
+                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}"
+                }
+            ],
+            "noDefaultEvents": false,
+            "anomalyType": "both"
+            },
+            {
+            "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "<p align=\"center\">\n<img src=\"https://i.ibb.co/mJm9JYf/Alerts.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"/integration/kubernetes/alerts\" target=\"_blank\">Pre defined Alerts</a>",
+                "autoColumnTags": false,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+            },
+            "includeObsoleteMetrics": false,
+            "name": "Pre defined Alerts",
+            "units": "Units",
+            "base": 0,
+            "chartAttributes": {
+                "dashboardLayout": {
+                "x": 6,
+                "y": 27,
+                "w": 3,
+                "h": 7
+                }
+            },
+            "sources": [
+                {
+                "name": "A",
+                "query": "",
+                "secondaryAxis": false,
+                "queryType": "WQL",
+                "querybuilderEnabled": true,
+                "querybuilderSerialization": "{\"_v\":1,\"metric\":\"\",\"filters\":[[],\"and\"],\"functions\":[]}",
+                "sourceDescription": "",
+                "scatterPlotSource": "Y"
+                }
+            ],
+            "noDefaultEvents": false
+            },
+            {
+            "anomalySeverity": "medium",
+            "anomalyDetectionOn": false,
+            "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "sparklineValueColorMapColors": [
+                "#e02200",
+                "rgba(87,170,19,1)"
+                ],
+                "showValueColumn": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "groupBySource": false,
+                "windowing": "full",
+                "sparklineSize": "NONE",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                1
+                ],
+                "y1Units": "",
+                "sparklineValueTextMapThresholds": [
+                1
+                ],
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "sparklineValueTextMapText": [
+                "No Alert Installed",
+                "Alerts Installed"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+            },
+            "displayConfidenceBounds": false,
+            "includeObsoleteMetrics": false,
+            "filterOutNonAnomalies": false,
+            "name": "New Chart",
+            "anomalySampleSize": "8",
+            "units": "%",
+            "summarization": "MEAN",
+            "base": 0,
+            "chartAttributes": {
+                "decimalPrecision": 0,
+                "topK": {
+                "labelBy": [
+                    "user"
+                ]
+                },
+                "lineFill": 1,
+                "colorMap": {
+                "colors": [
+                    "#e02200",
+                    "#ffc60a",
+                    "#57aa13"
+                ],
+                "values": [
+                    1,
+                    50
+                ]
+                },
+                "singleStat": {
+                "sparklineDisplayLabel": "A",
+                "sparklineDisplaySubLabel": ""
+                },
+                "dashboardLayout": {
+                "x": 9,
+                "y": 27,
+                "w": 3,
+                "h": 7
+                },
+                "y0ScaleDecimal": false
+            },
+            "sources": [
+                {
+                "name": "A Clone",
+                "query": "count(ts(~alert.summary.*, alertTag1=\"~integration.kubernetes\"))",
+                "disabled": false,
+                "secondaryAxis": false,
+                "queryType": "WQL",
+                "querybuilderEnabled": false
+                }
+            ],
+            "noDefaultEvents": false,
+            "anomalyType": "both"
+            }
+        ],
+        "heightFactor": 140
+        },
+        {
+        "charts": [
+            {
+            "anomalySeverity": "medium",
+            "anomalyDetectionOn": false,
+            "chartSettings": {
+                "plainMarkdownContent": "We can deploy an Operator into Kubernetes to auto discover applications running in the cluster and provide deep insights into the throughput, latency and error rate of the application without the need for code changes.\n\nThe OpenTelemetry Operator can instrument pods without any change made by developpers for applications wrote in:\n * Java (SpringBoot included)\n * Python\n * NodeJS\n * dotNet\n\n**Click on the link on the right** to see a demo app simulating a common e-shop.\n\nDetailed instructions on how to deploy the sidecar can be found here: <a href=\"https://github.com/bdekany/wavefront-otel-auto-instrumentation\" target=\"_blank\">otel-auto-instrumentation</a> <br/>\n\n[OpenTelemetry Operator Github Page](https://github.com/open-telemetry/opentelemetry-operator)\n",
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "lineType": "linear",
+                "windowing": "full",
+                "fixedLegendFilterSort": "TOP",
+                "y1Units": "",
+                "fixedLegendShowMetricName": false,
+                "type": "markdown-widget",
+                "y1UnitAutoscaling": false,
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                "CURRENT"
+                ],
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+            },
+            "displayConfidenceBounds": false,
+            "includeObsoleteMetrics": false,
+            "filterOutNonAnomalies": false,
+            "name": "#5 OpenTelemetry",
+            "anomalySampleSize": "8",
+            "units": "Units",
+            "summarization": "MEAN",
+            "base": 0,
+            "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                "x": 0,
+                "y": 34,
+                "w": 6,
+                "h": 7
+                }
+            },
+            "sources": [
+                {
+                "name": "A",
+                "query": "",
+                "disabled": false,
+                "secondaryAxis": false,
+                "queryType": "WQL",
+                "querybuilderEnabled": true,
+                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}"
+                }
+            ],
+            "noDefaultEvents": false,
+            "anomalyType": "both"
+            },
+            {
+            "anomalySeverity": "medium",
+            "anomalyDetectionOn": false,
+            "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "<p align=\"center\">\n<img src=\"https://i.ibb.co/wgp43jy/app-map.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"/tracing/appmap\" target=\"_blank\">Application Map</a>",
+                "autoColumnTags": false,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+            },
+            "displayConfidenceBounds": false,
+            "includeObsoleteMetrics": false,
+            "filterOutNonAnomalies": false,
+            "name": "Application Map",
+            "anomalySampleSize": "8",
+            "units": "Units",
+            "summarization": "MEAN",
+            "base": 0,
+            "chartAttributes": {
+                "dashboardLayout": {
+                "x": 6,
+                "y": 34,
+                "w": 3,
+                "h": 7
+                }
+            },
+            "sources": [
+                {
+                "sourceDescription": "",
+                "queryType": "WQL",
+                "query": "",
+                "name": "A",
+                "querybuilderEnabled": true,
+                "secondaryAxis": false,
+                "scatterPlotSource": "Y",
+                "disabled": false,
+                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}"
+                }
+            ],
+            "noDefaultEvents": false,
+            "anomalyType": "both"
+            },
+            {
+            "anomalySeverity": "medium",
+            "anomalyDetectionOn": false,
+            "chartSettings": {
+                "y1ScaleSIBy1024": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendFilterField": "CURRENT",
+                "y0ScaleSIBy1024": false,
+                "sparklineDisplayFontSize": "100",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendShowSourceName": true,
+                "sparklineValueColorMapColors": [
+                "#e02200",
+                "rgba(87,170,19,1)"
+                ],
+                "showValueColumn": true,
+                "fixedLegendPosition": "RIGHT",
+                "customTags": [],
+                "showRawValues": false,
+                "lineType": "linear",
+                "showHosts": true,
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "groupBySource": false,
+                "windowing": "full",
+                "sparklineSize": "NONE",
+                "fixedLegendFilterSort": "TOP",
+                "sparklineValueColorMapValuesV2": [
+                1
+                ],
+                "y1Units": "",
+                "sparklineValueTextMapThresholds": [
+                1
+                ],
+                "sortValuesDescending": true,
+                "fixedLegendShowMetricName": false,
+                "sparklineDisplayValueType": "VALUE",
+                "type": "sparkline",
+                "y1UnitAutoscaling": false,
+                "showLabels": true,
+                "sparklineValueTextMapText": [
+                "No trace collected",
+                "Collector is sending traces"
+                ],
+                "tagMode": "all",
+                "fixedLegendUseRawStats": false,
+                "y0UnitAutoscaling": false,
+                "fixedLegendDisplayStats": [
+                "CURRENT"
+                ],
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
+                "autoColumnTags": false,
+                "numTags": 4,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+            },
+            "displayConfidenceBounds": false,
+            "includeObsoleteMetrics": false,
+            "filterOutNonAnomalies": false,
+            "name": "New Chart",
+            "anomalySampleSize": "8",
+            "units": "",
+            "summarization": "MEAN",
+            "base": 0,
+            "chartAttributes": {
+                "decimalPrecision": 0,
+                "topK": {
+                "labelBy": [
+                    "user"
+                ]
+                },
+                "lineFill": 0,
+                "colorMap": {
+                "colors": [
+                    "#e02200",
+                    "#ffc60a",
+                    "#57aa13"
+                ],
+                "values": [
+                    1,
+                    50
+                ]
+                },
+                "singleStat": {
+                "sparklineDisplayLabel": "A",
+                "sparklineDisplaySubLabel": ""
+                },
+                "dashboardLayout": {
+                "x": 9,
+                "y": 34,
+                "w": 3,
+                "h": 7
+                },
+                "y0ScaleDecimal": false
+            },
+            "sources": [
+                {
+                "name": "A Clone",
+                "query": "default(0, ts(~tracing.traces.received))",
+                "disabled": false,
+                "secondaryAxis": false,
+                "queryType": "WQL",
+                "querybuilderEnabled": false,
+                "sourceDescription": ""
+                }
+            ],
+            "noDefaultEvents": false,
+            "anomalyType": "both"
+            }
+        ],
+        "heightFactor": 140
+        }
+    ]
+    }
+],
+"parameterDetails": {},
+"tags" :{
+    "customerTags":  ["community"]
+  }
+}

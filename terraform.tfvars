@@ -1,6 +1,7 @@
 dashboards = [
   "./confluent/confluent-cloud.json",
   "./tanzu/tap-full-stack.json",
+  "./tanzu/aria-apps-poc.json",
   "./kubernetes/harbor-community.json",
   "./kubernetes/ingress-nginx.json",
   "./kubernetes/blackbox-exporter.json",
