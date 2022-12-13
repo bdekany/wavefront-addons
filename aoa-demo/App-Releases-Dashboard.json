@@ -1,0 +1,598 @@
+{
+  "modifyAclAccess": true,
+  "hidden": false,
+  "parameters": {},
+  "name": "App Releases Dashboard",
+  "id": "App-Releases-Dashboard",
+  "customer": "aoa-se-demo",
+  "url": "App-Releases-Dashboard",
+  "eventFilterType": "NONE",
+  "sections": [
+    {
+      "name": "Section 1",
+      "id": "untitled-dashboard-section-1",
+      "rows": [
+        {
+          "heightFactor": 100,
+          "charts": [
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "New Chart",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "customTags": [],
+                "fixedLegendEnabled": false,
+                "fixedLegendUseRawStats": false,
+                "plainMarkdownContent": "# Using event to track code change\nAn event is a record that something of interest has happened. For example, a new code realse that is pushed into production or dev environment.\n\nEvents can be created manually through the UI or via our API to automate the with your CI/CD pipeline.\n",
+                "lineType": "linear",
+                "windowing": "full",
+                "autoColumnTags": false,
+                "tagMode": "all",
+                "numTags": 4,
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": false,
+                "y1UnitAutoscaling": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT"
+              },
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 0,
+                  "h": 5,
+                  "w": 6
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"metric\":\"ts()\",\"metricType\":\"m\",\"filters\":[[],\"and\"],\"functions\":[],\"_v\":1}"
+                },
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"metric\":\"ts()\",\"filters\":[[],\"and\"],\"functions\":[]}"
+                }
+              ],
+              "noDefaultEvents": false,
+              "interpolatePoints": false
+            },
+            {
+              "base": 0,
+              "units": "s",
+              "name": "New Chart",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "sparkline",
+                "customTags": [],
+                "fixedLegendEnabled": false,
+                "fixedLegendUseRawStats": false,
+                "lineType": "linear",
+                "windowing": "full",
+                "autoColumnTags": false,
+                "tagMode": "all",
+                "numTags": 4,
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": true,
+                "y1UnitAutoscaling": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT",
+                "sparklineDisplayValueType": "VALUE",
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDisplayFontSize": "100",
+                "sparklineSize": "BACKGROUND",
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "sparklineDecimalPrecision": 0,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ]
+              },
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "sparklineDisplayLabel": "A",
+                  "sparklineDisplaySubLabel": "since last Code Push",
+                  "commaDelimited": true
+                },
+                "dashboardLayout": {
+                  "x": 6,
+                  "y": 0,
+                  "h": 5,
+                  "w": 6
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "timestamp(count(last(events(type=\"Code Push\"))))",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false
+                },
+                {
+                  "name": "B",
+                  "query": "at(1m,time())",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false
+                },
+                {
+                  "name": "C",
+                  "query": "${B} - ${A}",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false
+                }
+              ],
+              "noDefaultEvents": false,
+              "interpolatePoints": false
+            }
+          ]
+        }
+      ],
+      "sectionFilter": null
+    },
+    {
+      "name": "Pods",
+      "id": "DRFfA",
+      "rows": [
+        {
+          "heightFactor": 100,
+          "charts": [
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "New Chart",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "customTags": [],
+                "fixedLegendEnabled": false,
+                "fixedLegendUseRawStats": false,
+                "plainMarkdownContent": "Did the app actually restart after the code push?",
+                "lineType": "linear",
+                "windowing": "full",
+                "autoColumnTags": false,
+                "tagMode": "all",
+                "numTags": 4,
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": false,
+                "y1UnitAutoscaling": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT"
+              },
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 0,
+                  "h": 5,
+                  "w": 6
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"metric\":\"ts()\",\"filters\":[[],\"and\"],\"functions\":[]}"
+                }
+              ],
+              "noDefaultEvents": false,
+              "interpolatePoints": false
+            },
+            {
+              "base": 0,
+              "units": "",
+              "name": "Restarts Rate by Pod",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "line",
+                "customTags": [],
+                "fixedLegendEnabled": false,
+                "fixedLegendUseRawStats": false,
+                "lineType": "linear",
+                "windowing": "full",
+                "autoColumnTags": false,
+                "tagMode": "all",
+                "numTags": 4,
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": false,
+                "y1UnitAutoscaling": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT"
+              },
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 6,
+                  "y": 0,
+                  "h": 5,
+                  "w": 6
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "limit(250, rate(lead(25m, ts(\"kubernetes.pod.restart_count\", cluster=\"${cluster_name}\" and nodename=\"${node_name}\" and namespace_name=\"${namespace}\"))))",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                },
+                {
+                  "name": "B",
+                  "query": "events(type=\"Code Push\")",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            }
+          ]
+        },
+        {
+          "heightFactor": 100,
+          "charts": [
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "New Chart",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "customTags": [],
+                "fixedLegendEnabled": false,
+                "fixedLegendUseRawStats": false,
+                "plainMarkdownContent": "Dotted line chart indicated missing data. The app was down during those tow releases",
+                "lineType": "linear",
+                "windowing": "full",
+                "autoColumnTags": false,
+                "tagMode": "all",
+                "numTags": 4,
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": false,
+                "y1UnitAutoscaling": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT"
+              },
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 5,
+                  "h": 5,
+                  "w": 6
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"metric\":\"ts()\",\"filters\":[[],\"and\"],\"functions\":[]}"
+                }
+              ],
+              "noDefaultEvents": false,
+              "interpolatePoints": false
+            },
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "New Chart",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "line",
+                "customTags": [],
+                "fixedLegendEnabled": false,
+                "fixedLegendUseRawStats": false,
+                "lineType": "linear",
+                "windowing": "full",
+                "autoColumnTags": false,
+                "tagMode": "all",
+                "numTags": 4,
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": false,
+                "y1UnitAutoscaling": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT"
+              },
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 6,
+                  "y": 5,
+                  "h": 5,
+                  "w": 6
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "limit(250, ts(\"kubernetes.pod.cpu.usage_rate\", cluster=\"${cluster_name}\" and nodename=\"${node_name}\" and namespace_name=\"${namespace}\"))",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false
+                },
+                {
+                  "name": "B",
+                  "query": "events(type=\"Code Push\")",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false
+                }
+              ],
+              "noDefaultEvents": false,
+              "interpolatePoints": false
+            }
+          ]
+        },
+        {
+          "heightFactor": 100,
+          "charts": [
+            {
+              "base": 0,
+              "name": "Pods Failed",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "table",
+                "min": 1,
+                "customTags": [
+                  "nodename",
+                  "cluster",
+                  "namespace_name",
+                  "pod_name"
+                ],
+                "fixedLegendEnabled": false,
+                "fixedLegendUseRawStats": false,
+                "lineType": "linear",
+                "windowing": "full",
+                "windowSize": 5,
+                "showHosts": false,
+                "showLabels": false,
+                "showRawValues": false,
+                "showValueColumn": false,
+                "autoColumnTags": false,
+                "tagMode": "custom",
+                "numTags": 4,
+                "groupBySource": false,
+                "sortValuesDescending": false,
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": false,
+                "y1UnitAutoscaling": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT"
+              },
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 10,
+                  "h": 5,
+                  "w": 12
+                }
+              },
+              "sources": [
+                {
+                  "name": "pods_failed",
+                  "query": "ts(\"kubernetes.pod.status.phase\", cluster=\"${cluster_name}\" and nodename=\"${node_name}\" and namespace_name=\"${namespace}\" and phase=\"Failed\")",
+                  "disabled": true,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false
+                },
+                {
+                  "name": "pods",
+                  "query": "if(exists(${pods_failed}), if(mcount(1vw, ${pods_failed}) = 0, 0, ${pods_failed}), 0)",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "LAST",
+              "interpolatePoints": false
+            }
+          ]
+        }
+      ],
+      "sectionFilter": null
+    }
+  ],
+  "parameterDetails": {
+    "namespace": {
+      "defaultValue": "Label",
+      "label": "Namespace",
+      "parameterType": "DYNAMIC",
+      "valuesToReadableStrings": {
+        "Label": "*"
+      },
+      "allowAll": true,
+      "dynamicFieldType": "TAG_KEY",
+      "queryValue": "limit(1000, ts(\"kubernetes.ns.memory.usage\", cluster=\"${cluster_name}\"))",
+      "hideFromView": false,
+      "tagKey": "namespace_name",
+      "order": 2,
+      "tagsBlackListRegex": ""
+    },
+    "pods_group_by": {
+      "defaultValue": "Label",
+      "label": "pods_group_by",
+      "parameterType": "SIMPLE",
+      "valuesToReadableStrings": {
+        "Label": "none"
+      },
+      "allowAll": false,
+      "hideFromView": true
+    },
+    "node_name": {
+      "defaultValue": "Label",
+      "label": "Node",
+      "parameterType": "DYNAMIC",
+      "valuesToReadableStrings": {
+        "Label": "*"
+      },
+      "allowAll": true,
+      "dynamicFieldType": "TAG_KEY",
+      "queryValue": "limit(1000, ts(\"kubernetes.node.cpu.limit\", cluster=\"${cluster_name}\"))",
+      "hideFromView": false,
+      "tagKey": "nodename",
+      "order": 3,
+      "tagsBlackListRegex": ""
+    },
+    "cluster_name": {
+      "defaultValue": "Label_7",
+      "label": "Cluster",
+      "parameterType": "DYNAMIC",
+      "valuesToReadableStrings": {
+        "Label_7": "rke-azure-us-east"
+      },
+      "allowAll": true,
+      "dynamicFieldType": "TAG_KEY",
+      "queryValue": "max(ts(\"kubernetes.cluster.cpu.limit\"), cluster)",
+      "hideFromView": false,
+      "tagKey": "cluster",
+      "order": 1,
+      "tagsBlackListRegex": ""
+    },
+    "pods_metric": {
+      "defaultValue": "Label",
+      "label": "pods_metric",
+      "parameterType": "SIMPLE",
+      "valuesToReadableStrings": {
+        "Label": "CPU Usage"
+      },
+      "allowAll": false,
+      "hideFromView": true
+    }
+  },
+  "disableRefreshInLiveMode": false,
+  "hideChartWarning": false,
+  "displayDescription": false,
+  "displaySectionTableOfContents": true,
+  "displayQueryParameters": true,
+  "defaultTimeWindow": "custom",
+  "defaultStartTime": 1664521627000,
+  "defaultEndTime": 1664536027000,
+  "viewsLastDay": 0,
+  "viewsLastWeek": 1,
+  "viewsLastMonth": 5,
+  "acl": {
+    "canView": [],
+    "canModify": [
+      "f86d819e-7f44-4b4c-9955-34eb713644df"
+    ]
+  },
+  "dashboardAttributes": null,
+  "includeObsoleteMetrics": false,
+  "creatorId": "dbrice@vmware.com",
+  "updaterId": "dbrice@vmware.com",
+  "orphan": false,
+  "systemOwned": false,
+  "createdEpochMillis": 1664530391587,
+  "updatedEpochMillis": 1667479691412,
+  "deleted": false,
+  "numCharts": 7,
+  "favorite": false,
+  "numFavorites": 0
+}

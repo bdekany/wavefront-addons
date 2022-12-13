@@ -1,60 +1,44 @@
 {
   "name": "Kubernetes Deprecated API",
   "url": "Kubernetes-Deprecated-API",
-  "eventFilterType": "BYCHART",
+  "description": "",
+  "eventFilterType": "NONE",
+  "eventQuery": "",
+  "defaultTimeWindow": "",
   "displayDescription": false,
   "displaySectionTableOfContents": true,
   "displayQueryParameters": true,
   "sections": [
     {
       "name": "APIs",
-      "id": "EvNqr",
+      "id": "Kubernetes-Deprecated-API-section-1",
       "rows": [
         {
           "charts": [
             {
-              "anomalySeverity": "medium",
-              "anomalyDetectionOn": false,
               "chartSettings": {
-                "y1ScaleSIBy1024": false,
-                "fixedLegendEnabled": false,
                 "fixedLegendFilterField": "CURRENT",
-                "y0ScaleSIBy1024": false,
                 "fixedLegendFilterLimit": 5,
-                "fixedLegendShowSourceName": true,
-                "showValueColumn": true,
                 "fixedLegendPosition": "RIGHT",
-                "customTags": [],
-                "showRawValues": false,
                 "lineType": "linear",
-                "showHosts": false,
-                "groupBySource": false,
                 "windowing": "full",
-                "defaultSortColumn": "tags[\"resource\"]",
                 "fixedLegendFilterSort": "TOP",
-                "y1Units": "",
                 "sortValuesDescending": true,
-                "fixedLegendShowMetricName": false,
                 "type": "top-k",
-                "y1UnitAutoscaling": false,
-                "showLabels": false,
                 "tagMode": "all",
-                "fixedLegendUseRawStats": false,
-                "y0UnitAutoscaling": false,
                 "fixedLegendDisplayStats": [
                   "CURRENT"
                 ],
+                "sparklineDecimalPrecision": 0,
                 "autoColumnTags": false,
                 "numTags": 4,
+                "defaultSortColumn": null,
                 "sparklineDisplayColor": null,
                 "sparklineLineColor": null,
                 "sparklineFillColor": null
               },
-              "displayConfidenceBounds": false,
               "includeObsoleteMetrics": false,
-              "filterOutNonAnomalies": false,
               "name": "Most Used Deprecated API Calls",
-              "anomalySampleSize": "8",
               "units": "Units",
               "summarization": "MEAN",
               "base": 0,
@@ -70,7 +54,7 @@
                 "dashboardLayout": {
                   "x": 0,
                   "y": 0,
-                  "w": 12,
+                  "w": 6,
                   "h": 6
                 }
               },
@@ -78,26 +62,66 @@
                 {
                   "name": "A",
                   "query": "ts(kube.apiserver.apiserver.request.total.counter and cluster=${cluster_name})",
-                  "disabled": true,
-                  "secondaryAxis": false,
-                  "queryType": "WQL",
-                  "querybuilderEnabled": false
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true
                 },
                 {
                   "name": "B",
                   "query": "ts(kube.apiserver.apiserver.requested.deprecated.apis.gauge and cluster=${cluster_name})",
-                  "disabled": true,
-                  "secondaryAxis": false,
-                  "queryType": "WQL",
-                  "querybuilderEnabled": false
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": true
                 },
                 {
                   "name": "A Clone",
                   "query": "count(join( ${A} AS ts1 INNER JOIN ${B} AS ts2\nUSING (cluster, group, resource, version),\nmetric='newmetric', cluster=ts1.cluster, group=ts1.group, resource=ts1.resource, version=ts1.version,\n ts1 / ts2), cluster, resource, version)",
-                  "disabled": false,
-                  "secondaryAxis": false,
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "description": ""
+            },
+            {
+              "anomalySeverity": "medium",
+              "anomalyDetectionOn": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "### <cds-icon shape=\"exclamation-triangle\"></cds-icon> Charts with \"NO DATA\"?\n\nAdd API Server Metrics collection in the sources section of [collector-configmap](https://github.com/wavefrontHQ/wavefront-operator-for-kubernetes/blob/main/deploy/kubernetes/scenarios/wavefront-collector-existing-configmap.yaml)\n\n```yaml\n    sources:\n      prometheus_sources:\n      - url: 'https://kubernetes.default.svc/metrics'\n        httpConfig:\n          bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token\n          tls_config:\n            ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt\n            insecure_skip_verify: true\n        prefix: kube.apiserver.\n        filters:\n          metricWhitelist:\n          - 'kube.apiserver.apiserver.*'\n          - 'kube.apiserver.etcd.*'\n          - 'kube.apiserver.process.*'\n```",
+                "autoColumnTags": false,
+                "defaultSortColumn": null,
+                "sparklineDisplayColor": null,
+                "sparklineLineColor": null,
+                "sparklineFillColor": null
+              },
+              "displayConfidenceBounds": false,
+              "includeObsoleteMetrics": false,
+              "filterOutNonAnomalies": false,
+              "name": "How to Install",
+              "anomalySampleSize": "8",
+              "units": "Units",
+              "summarization": "MEAN",
+              "base": 0,
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 6,
+                  "y": 0,
+                  "w": 6,
+                  "h": 6
+                }
+              },
+              "sources": [
+                {
+                  "sourceDescription": "",
                   "queryType": "WQL",
-                  "querybuilderEnabled": false
+                  "query": "",
+                  "name": "A",
+                  "querybuilderEnabled": true,
+                  "secondaryAxis": false,
+                  "scatterPlotSource": "Y",
+                  "disabled": false,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}"
                 }
               ],
               "noDefaultEvents": false,
@@ -109,48 +133,29 @@
         {
           "charts": [
             {
-              "anomalySeverity": "medium",
-              "anomalyDetectionOn": false,
               "chartSettings": {
-                "y1ScaleSIBy1024": false,
-                "fixedLegendEnabled": false,
                 "fixedLegendFilterField": "CURRENT",
-                "y0ScaleSIBy1024": false,
                 "fixedLegendFilterLimit": 5,
-                "fixedLegendShowSourceName": true,
-                "showValueColumn": false,
                 "fixedLegendPosition": "RIGHT",
-                "customTags": [],
-                "showRawValues": false,
                 "lineType": "linear",
-                "showHosts": false,
-                "groupBySource": false,
                 "windowing": "full",
-                "defaultSortColumn": "tags[\"version\"]",
                 "fixedLegendFilterSort": "TOP",
-                "y1Units": "",
                 "sortValuesDescending": true,
-                "fixedLegendShowMetricName": false,
                 "type": "table",
-                "y1UnitAutoscaling": false,
-                "showLabels": false,
                 "tagMode": "all",
-                "fixedLegendUseRawStats": false,
-                "y0UnitAutoscaling": false,
                 "fixedLegendDisplayStats": [
                   "CURRENT"
                 ],
+                "sparklineDecimalPrecision": 0,
                 "autoColumnTags": false,
                 "numTags": 4,
+                "defaultSortColumn": null,
                 "sparklineDisplayColor": null,
                 "sparklineLineColor": null,
                 "sparklineFillColor": null
               },
-              "displayConfidenceBounds": false,
               "includeObsoleteMetrics": false,
-              "filterOutNonAnomalies": false,
               "name": "Deprecated APIs",
-              "anomalySampleSize": "8",
               "units": "Units",
               "summarization": "MEAN",
               "base": 0,
@@ -168,40 +173,28 @@
                 {
                   "name": "Query",
                   "query": "ts(\"kube.apiserver.apiserver.requested.deprecated.apis.*\" and cluster=\"${cluster_name}\")",
-                  "disabled": false,
-                  "secondaryAxis": false,
-                  "queryType": "WQL",
                   "querybuilderEnabled": false,
                   "sourceDescription": ""
                 }
               ],
               "noDefaultEvents": false,
-              "anomalyType": "both"
+              "description": ""
             },
             {
               "chartSettings": {
                 "plainMarkdownContent": "<iframe width=\"100%\"height=\"100%\" src=\"https://kubernetes.io/docs/reference/using-api/deprecation-guide/\">Loading Kubernetes.io Deprecation Guidehttps://kubernetes.io/docs/reference/using-api/deprecation-guide/ <iframe>",
-                "y1ScaleSIBy1024": false,
-                "fixedLegendEnabled": false,
                 "fixedLegendFilterField": "CURRENT",
-                "y0ScaleSIBy1024": false,
                 "fixedLegendFilterLimit": 5,
-                "fixedLegendShowSourceName": true,
                 "fixedLegendPosition": "RIGHT",
-                "customTags": [],
                 "lineType": "linear",
                 "windowing": "full",
                 "fixedLegendFilterSort": "TOP",
-                "y1Units": "",
-                "fixedLegendShowMetricName": false,
                 "type": "markdown-widget",
-                "y1UnitAutoscaling": false,
                 "tagMode": "all",
-                "fixedLegendUseRawStats": false,
-                "y0UnitAutoscaling": false,
                 "fixedLegendDisplayStats": [
                   "CURRENT"
                 ],
+                "sparklineDecimalPrecision": 0,
                 "autoColumnTags": false,
                 "numTags": 4,
                 "defaultSortColumn": null,
@@ -212,6 +205,7 @@
               "includeObsoleteMetrics": false,
               "name": "Deprecated API Guide",
               "units": "Units",
+              "summarization": "MEAN",
               "base": 0,
               "chartAttributes": {
                 "lineFill": 1,
@@ -226,14 +220,12 @@
                 {
                   "name": "A",
                   "query": "",
-                  "disabled": false,
-                  "secondaryAxis": false,
-                  "queryType": "WQL",
                   "querybuilderEnabled": true,
-                  "querybuilderSerialization": "{\"_v\":1,\"metric\":\"ts()\",\"filters\":[[],\"and\"],\"functions\":[]}"
+                  "sourceDescription": ""
                 }
               ],
-              "noDefaultEvents": false
+              "noDefaultEvents": false,
+              "description": ""
             }
           ],
           "heightFactor": 160
@@ -241,44 +233,30 @@
         {
           "charts": [
             {
-              "anomalySeverity": "medium",
-              "anomalyDetectionOn": false,
               "chartSettings": {
-                "y1ScaleSIBy1024": false,
-                "fixedLegendEnabled": false,
                 "fixedLegendFilterField": "CURRENT",
-                "y0ScaleSIBy1024": false,
                 "sparklineDisplayFontSize": "100",
                 "fixedLegendFilterLimit": 5,
-                "fixedLegendShowSourceName": true,
-                "showValueColumn": true,
                 "fixedLegendPosition": "RIGHT",
-                "customTags": [],
-                "showRawValues": false,
                 "lineType": "linear",
                 "showHosts": true,
                 "sparklineValueColorMapApplyTo": "TEXT",
-                "groupBySource": false,
                 "windowing": "full",
                 "sparklineSize": "BACKGROUND",
                 "fixedLegendFilterSort": "TOP",
-                "y1Units": "",
                 "sortValuesDescending": true,
-                "fixedLegendShowMetricName": false,
                 "sparklineDisplayValueType": "VALUE",
                 "type": "top-k",
-                "y1UnitAutoscaling": false,
                 "showLabels": true,
                 "sparklineValueTextMapText": [
                   "new highest"
                 ],
                 "tagMode": "custom",
-                "fixedLegendUseRawStats": false,
-                "y0UnitAutoscaling": false,
                 "fixedLegendDisplayStats": [
                   "CURRENT"
                 ],
                 "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDecimalPrecision": 0,
                 "autoColumnTags": false,
                 "numTags": 4,
                 "defaultSortColumn": null,
@@ -286,11 +264,8 @@
                 "sparklineLineColor": null,
                 "sparklineFillColor": null
               },
-              "displayConfidenceBounds": false,
               "includeObsoleteMetrics": false,
-              "filterOutNonAnomalies": false,
               "name": "Most Used K8S Version",
-              "anomalySampleSize": "8",
               "units": "Units",
               "summarization": "MAX",
               "base": 0,
@@ -322,47 +297,30 @@
                 {
                   "name": "A",
                   "query": "count(ts(kubernetes.collector.version), k8s_version)",
-                  "disabled": false,
-                  "secondaryAxis": false,
-                  "queryType": "WQL",
                   "querybuilderEnabled": false,
                   "sourceDescription": ""
                 }
               ],
               "noDefaultEvents": false,
-              "anomalyType": "both"
+              "description": ""
             },
             {
-              "anomalySeverity": "medium",
-              "anomalyDetectionOn": false,
               "chartSettings": {
-                "y1ScaleSIBy1024": false,
-                "fixedLegendEnabled": false,
                 "fixedLegendFilterField": "CURRENT",
-                "y0ScaleSIBy1024": false,
                 "fixedLegendFilterLimit": 5,
-                "fixedLegendShowSourceName": true,
-                "showValueColumn": true,
                 "fixedLegendPosition": "RIGHT",
-                "customTags": [],
-                "showRawValues": false,
                 "lineType": "linear",
                 "showHosts": true,
-                "groupBySource": false,
                 "windowing": "full",
                 "fixedLegendFilterSort": "TOP",
-                "y1Units": "",
                 "sortValuesDescending": true,
-                "fixedLegendShowMetricName": false,
                 "type": "nodemap",
-                "y1UnitAutoscaling": false,
                 "showLabels": true,
                 "tagMode": "all",
-                "fixedLegendUseRawStats": false,
-                "y0UnitAutoscaling": false,
                 "fixedLegendDisplayStats": [
                   "CURRENT"
                 ],
+                "sparklineDecimalPrecision": 0,
                 "autoColumnTags": false,
                 "numTags": 4,
                 "defaultSortColumn": null,
@@ -370,11 +328,8 @@
                 "sparklineLineColor": null,
                 "sparklineFillColor": null
               },
-              "displayConfidenceBounds": false,
               "includeObsoleteMetrics": false,
-              "filterOutNonAnomalies": false,
               "name": "Nodes per versions",
-              "anomalySampleSize": "8",
               "units": "Units",
               "summarization": "COUNT",
               "base": 0,
@@ -396,30 +351,28 @@
                 {
                   "name": "Cluster Nodes",
                   "query": "ts(kubernetes.collector.version and cluster=${cluster_name})",
-                  "disabled": false,
-                  "secondaryAxis": false,
-                  "queryType": "WQL",
                   "querybuilderEnabled": false,
                   "sourceDescription": ""
                 }
               ],
               "noDefaultEvents": false,
-              "anomalyType": "both"
+              "description": ""
             }
           ],
           "heightFactor": 100
         }
-      ]
+      ],
+      "sectionFilter": null
     },
     {
       "name": "",
-      "id": "wmwgI",
-      "rows": []
+      "id": "Kubernetes-Deprecated-API-section-2",
+      "rows": [],
+      "sectionFilter": null
     }
   ],
   "parameterDetails": {
     "cluster_name": {
-      "tagsBlackListRegex": "",
       "parameterType": "DYNAMIC",
       "tagKey": "cluster",
       "queryValue": "collect(max(ts(\"kubernetes.cluster.cpu.limit\"), cluster), taggify(1, cluster, \"*\"))",
@@ -432,9 +385,10 @@
       "valuesToReadableStrings": {
         "Label": "*"
       },
-      "allowAll": false,
       "selectedLabel": "Label"
     }
   },
-  "forceV2UI": true
+  "tags": {
+      "customerTags":  ["community"]
+  }
 }

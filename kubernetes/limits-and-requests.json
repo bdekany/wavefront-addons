@@ -1068,12 +1068,7 @@
       "label": "namespace",
       "dynamicFieldType": "TAG_KEY",
       "valuesToReadableStrings": {
-        "Label": "*",
-        "Label_2": "ingress-nginx",
-        "Label_3": "kube-system",
-        "Label_4": "observability-system",
-        "Label_5": "otel-demo",
-        "Label_6": "wavefront"
+        "Label": "*"
       },
       "allowAll": true,
       "selectedLabel": "Label"
@@ -1090,11 +1085,14 @@
       "label": "Cluster",
       "dynamicFieldType": "TAG_KEY",
       "valuesToReadableStrings": {
-        "Label": "*",
-        "Label_2": "gcp"
+        "Label": "*"
       },
       "allowAll": true,
       "selectedLabel": "Label"
     }
+  },
+"tags": {
+    "customerTags":  ["community"]
   }
+
 }

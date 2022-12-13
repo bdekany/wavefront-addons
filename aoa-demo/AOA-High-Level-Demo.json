@@ -1,0 +1,363 @@
+{
+  "modifyAclAccess": true,
+  "hidden": false,
+  "parameters": {},
+  "name": "AOA High Level Demo ",
+  "id": "AOA-High-Level-Demo",
+  "tags": {
+    "customerTags": []
+  },
+  "displayDescription": false,
+  "displaySectionTableOfContents": true,
+  "displayQueryParameters": true,
+  "viewsLastDay": 2,
+  "viewsLastWeek": 8,
+  "viewsLastMonth": 43,
+  "acl": {
+    "canView": [],
+    "canModify": [
+      "f86d819e-7f44-4b4c-9955-34eb713644df",
+      "croninr@vmware.com"
+    ]
+  },
+  "dashboardAttributes": null,
+  "customer": "aoa-se-demo",
+  "url": "AOA-High-Level-Demo",
+  "eventFilterType": "NONE",
+  "sections": [
+    {
+      "name": "Introduction",
+      "id": "untitled-dashboard-section-1",
+      "rows": [
+        {
+          "charts": [
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "lineType": "linear",
+                "windowing": "full",
+                "autoColumnTags": false,
+                "tagMode": "all",
+                "numTags": 4,
+                "customTags": [],
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": false,
+                "y1UnitAutoscaling": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendUseRawStats": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT",
+                "plainMarkdownContent": "|  |\n| - | \n| **Aria Operations for Applications** powered by<img src=\"https://blogs.vmware.com/management/files/2022/08/vmw-prod-icon-aria-cmyk_horiz-1024x348.png\" style=\"width:200px\"/> |\n\n<hr/>\n\nThis demonstration will show how AOA can provide full end to end application visibility of your applications running on premise, in the public cloud or both.\n\nThe tile on the right shows the front end of our application, it is a e-commerce applicaiton and is made up of microservices written in languages such as java, .NET and Node-JS.\n\nThe applicaiton can be downloaded from <a href=\"https://github.com/open-telemetry/opentelemetry-demo\" target=\"_blank\">github</a> <br/>\n<br/>\n<br/>\n\n**Feel free to order an item from the online store** (Browser will open in new tab, close tab when done)\n\n"
+              },
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 0,
+                  "h": 20,
+                  "w": 4
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}",
+                  "querybuilderEnabled": true,
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "autoColumnTags": false,
+                "plainMarkdownContent": "<a href=\"http://otel.20.55.53.87.sslip.io/#hot-products\" target=\"_new\"><img src=\"https://i.ibb.co/bJbgL0P/otelfront.png?raw=true\" style=\"width:85%\"/></a>"
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 4,
+                  "y": 0,
+                  "h": 20,
+                  "w": 8
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "scatterPlotSource": "Y",
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "querybuilderEnabled": true,
+                  "sourceDescription": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            }
+          ],
+          "heightFactor": 430
+        },
+        {
+          "charts": [
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "lineType": "linear",
+                "windowing": "full",
+                "autoColumnTags": false,
+                "tagMode": "all",
+                "numTags": 4,
+                "customTags": [],
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": false,
+                "y1UnitAutoscaling": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendUseRawStats": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT",
+                "plainMarkdownContent": "[START]"
+              },
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 20,
+                  "h": 2,
+                  "w": 1
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}",
+                  "querybuilderEnabled": true,
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "sparkline",
+                "lineType": "linear",
+                "windowing": "full",
+                "autoColumnTags": false,
+                "tagMode": "all",
+                "numTags": 4,
+                "customTags": [],
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": false,
+                "y1UnitAutoscaling": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendUseRawStats": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT",
+                "sparklineDisplayValueType": "LABEL",
+                "sparklineDisplayColor": "rgba(255,255,255,1)",
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDisplayFontSize": "100",
+                "sparklineSize": "BACKGROUND",
+                "sparklineValueColorMapColors": [
+                  "rgba(59,64,206,1)",
+                  "rgba(59,64,206,1)"
+                ],
+                "sparklineValueColorMapValuesV2": [
+                  10
+                ],
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "plainMarkdownContent": "..."
+              },
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "sparklineDisplayLabel": "INTRODUCTION",
+                  "sparklineDisplaySubLabel": ""
+                },
+                "dashboardLayout": {
+                  "x": 1,
+                  "y": 20,
+                  "h": 2,
+                  "w": 10
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "0",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "lineType": "linear",
+                "windowing": "full",
+                "autoColumnTags": false,
+                "tagMode": "all",
+                "numTags": 4,
+                "customTags": [],
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": false,
+                "y1UnitAutoscaling": false,
+                "fixedLegendEnabled": false,
+                "fixedLegendUseRawStats": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT",
+                "plainMarkdownContent": "[NEXT >>](https://kibo.wavefront.com/dashboards/AOA-High-Level-Demo-Section-1#_v01(g:(c:off,d:7200,ls:!f,s:1667489982,tz:default),p:()))"
+              },
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 11,
+                  "y": 20,
+                  "h": 2,
+                  "w": 1
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}",
+                  "querybuilderEnabled": true,
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            }
+          ],
+          "heightFactor": 30
+        }
+      ],
+      "sectionFilter": null
+    }
+  ],
+  "parameterDetails": {},
+  "creatorId": "croninr@vmware.com",
+  "updaterId": "croninr@vmware.com",
+  "orphan": false,
+  "systemOwned": false,
+  "createdEpochMillis": 1667495902218,
+  "updatedEpochMillis": 1667818671917,
+  "deleted": false,
+  "numCharts": 5,
+  "numFavorites": 2,
+  "favorite": false
+}

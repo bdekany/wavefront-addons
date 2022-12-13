@@ -1,0 +1,871 @@
+{
+  "modifyAclAccess": true,
+  "hidden": false,
+  "parameters": {},
+  "name": "AOA Start",
+  "id": "AOA-Start",
+  "tags": {
+    "customerTags": []
+  },
+  "customer": "aoa-se-demo",
+  "url": "AOA-Start",
+  "eventFilterType": "NONE",
+  "sections": [
+    {
+      "name": "OpenTelemetry Demo App",
+      "id": "Tanzu-AE-Demo-RjC-section-1",
+      "rows": [
+        {
+          "heightFactor": 270,
+          "charts": [
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "|  |\n| - | \n| **Any App Any Platform Any Cloud**  **powered by**   <img src=\"https://blogs.vmware.com/management/files/2022/08/vmw-prod-icon-aria-cmyk_horiz-1024x348.png\" style=\"width:200px\"/> |\n<hr/>\n\nThis demonstration shows how Aria Operations for Apps can provide realtime views of the status and performance of the application opentelemetry-demo, a typical e-commerce application made up of many micro services using a selection of method calls to COTS (commercial of the shelf) and in house developed components.\n \n  \nOn the right hand side is a view of the online boutique. This e-commerce application is an example of a polyglot application - micro services built with different programming languages - created to be used within Kubernetes and designed to send telemetry supported by Open Telemetry.\n \nFor more details of the application please refer to <a href=\"https://github.com/open-telemetry/opentelemetry-demo\" target=\"_blank\">github</a> <br/>\nPlease take a look at the store here: http://otel.20.55.53.87.sslip.io and order something\n<hr/>\n\nThe e-commerce application has been deployed to multiple flavors of Kubernetes, VMware TKG, AWS EKS, Azure AKS, Google Cloud Platform GKE, Suse Rancher and Redhat Openshift. Aria Operations for Apps (AOA) has been deployed on each cluster to provide metrics, events (alerting), logs and tracing.\n\nThis demonstration will show:\n * How the collector is deployed to a Kubernetes cluster\n * The default dashboards the provide visibility to the Kubernetes cluster\n * How apre defined log collection is used within the UI\n * How AOA can provide insights into how each transaction performs within the application with Open Tracing\n * How customers can customize dashbaords to create views that are tailored for specific teams responsible for the application\n\n\n<img src=\"https://www.vmware.com/etc/clientlibs/vmwaredevapp/clientlib-nav-redesign/images/vm-logo.png\" style=\"width:80px\"/>   ",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 0,
+                  "h": 13,
+                  "w": 6
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "Link to Store Front - Click to open",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "\n\n<a href=\"http://otel.20.55.53.87.sslip.io/#hot-products\" target=\"_new\"><img src=\"https://i.ibb.co/bJbgL0P/otelfront.png?raw=true\" style=\"width:85%\"/></a>",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 6,
+                  "y": 0,
+                  "h": 13,
+                  "w": 6
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            }
+          ]
+        },
+        {
+          "heightFactor": 140,
+          "charts": [
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "|  |\n| - | \n| \n<br/>\n**Demo Use Case #1 The Kubernetes Collector**\n<br/>\nFirst, let's take a look at the 'out of the box' experience when using AOA for Kubernetes. <br/>\n\n<br/>\n\n**Click in the links** on the right to show how to set up the K8s collector, the out of the box dashboards, pre-defined SLIs/SLOs and pre-defined alerts.\n\n\n<hr/>\n\n\n\n\n<img src=\"https://www.vmware.com/etc/clientlibs/vmwaredevapp/clientlib-nav-redesign/images/vm-logo.png\" style=\"width:80px\"/>   ",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 13,
+                  "h": 7,
+                  "w": 4
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "\n<p align=\"center\">\n<img src=\"https://i.ibb.co/1KfP6T0/setup.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"https://kibo.wavefront.com/integration/kubernetes/setup\" target=\"_blank\">setup K8s collector</a>\n\n\n",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 4,
+                  "y": 13,
+                  "h": 7,
+                  "w": 2
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "\n<p align=\"center\">\n<img src=\"https://i.ibb.co/QvtwFSc/Dashboards.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"https://kibo.wavefront.com/integration/kubernetes/content\" target=\"_blank\">Pre defined Dashboards</a>\n\n\n",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 6,
+                  "y": 13,
+                  "h": 7,
+                  "w": 2
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "\n<p align=\"center\">\n<img src=\"https://i.ibb.co/TwnHGD0/SLIs.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"https://kibo.wavefront.com/u/1RZ2Q8ZyG5?t=aoa-se-demo\" target=\"_blank\">SLI/SLO Dashboard</a>\n\n\n",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 8,
+                  "y": 13,
+                  "h": 7,
+                  "w": 2
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "\n<p align=\"center\">\n<img src=\"https://i.ibb.co/mJm9JYf/Alerts.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"https://kibo.wavefront.com/integration/kubernetes/alerts\" target=\"_blank\">Pre defined Alerts</a>\n\n\n",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 10,
+                  "y": 13,
+                  "h": 7,
+                  "w": 2
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            }
+          ]
+        },
+        {
+          "heightFactor": 140,
+          "charts": [
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "|  |\n| - | \n| \n<br/>\n**Demo Use Case #2 Kubernetes Logs**\n<br/>\nNow, let's take a look at the logging for Kubernetes. <br/>\n\n<br/>\n\n**Click in the links** on the right to show how to set up the K8s collector, the out of the box dashboards, pre-defined SLIs/SLOs and pre-defined alerts.\n\n\n<hr/>\n\n\n\n\n<img src=\"https://www.vmware.com/etc/clientlibs/vmwaredevapp/clientlib-nav-redesign/images/vm-logo.png\" style=\"width:80px\"/>   ",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 20,
+                  "h": 7,
+                  "w": 4
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "\n<p align=\"center\">\n<img src=\"https://i.ibb.co/FWSkrW5/logbrowser.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"https://kibo.wavefront.com/u/1tbkhGXPY2?t=aoa-se-demo\" target=\"_blank\">Log Browser</a>\n\n\n",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 4,
+                  "y": 20,
+                  "h": 7,
+                  "w": 2
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "\n<p align=\"center\">\n<img src=\"https://i.ibb.co/PMhSwf1/logalerts.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"https://kibo.wavefront.com/u/3Ftjgdlzc7?t=aoa-se-demo\" target=\"_blank\">Alert Details</a>\n\n\n",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 6,
+                  "y": 20,
+                  "h": 7,
+                  "w": 2
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "\n<p align=\"center\">\n<img src=\"https://i.ibb.co/fSS7RFB/dashboard-log.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"https://kibo.wavefront.com/u/1RZ2Q8ZyG5?t=aoa-se-demo\" target=\"_blank\">Dashboard With Logs Embedded</a>\n\n\n",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 8,
+                  "y": 20,
+                  "h": 7,
+                  "w": 2
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            }
+          ]
+        },
+        {
+          "heightFactor": 140,
+          "charts": [
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "|  |\n| - | \n| \n**Demo Use Case #3 Open Telemetry in Kubernetes**\n<br/>\nWe can deploy a sidecar into Kubernetes to auto discover applications running in the cluster and provide deep insights into the throughput, latency and error rate of the application without the need for code changes. <br/>\n\n<br/>\n\nDetailed instructions on how to deploy the sidecar can be found here: <a href=\"https://github.com/bdekany/wavefront-otel-auto-instrumentation\" target=\"_blank\">otel-auto-instrumentation</a> <br/>\n\n\n<hr/>\n\n\n\n\n<img src=\"https://www.vmware.com/etc/clientlibs/vmwaredevapp/clientlib-nav-redesign/images/vm-logo.png\" style=\"width:80px\"/>   ",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 27,
+                  "h": 7,
+                  "w": 4
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "\n<p align=\"center\">\n<img src=\"https://i.ibb.co/wgp43jy/app-map.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"https://kibo.wavefront.com/u/5qBXgVk84Q?t=aoa-se-demo\" target=\"_blank\">Application Map</a>\n\n\n",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 4,
+                  "y": 27,
+                  "h": 7,
+                  "w": 2
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "\n<p align=\"center\">\n<img src=\"https://i.ibb.co/D90FQW3/Service-View.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n<a href=\"http://www.omsaicreche.blogspot.com\" target=\"_blank\" onclick=\"location.href='http://www.omsaivatikanoida.blogspot.com';\" target=\"_blank\">Open Two Links With One Click</a>\n\n\n",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 6,
+                  "y": 27,
+                  "h": 7,
+                  "w": 2
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "\n<p align=\"center\">\n<img src=\"https://i.ibb.co/nPFs8h4/traces.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"https://kibo.wavefront.com/u/S0PTvb0hnf?t=aoa-se-demo\" target=\"_blank\">Trace Analysis</a>\n\n\n",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 8,
+                  "y": 27,
+                  "h": 7,
+                  "w": 2
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            }
+          ]
+        },
+        {
+          "heightFactor": 140,
+          "charts": [
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "|  |\n| - | \n| \n**Demo Use Case #4 Customized Views**\n<br/>\nWe will show some example custom dashboards to demonstrate how an organisation can provide the right insights into their applications for any audience. <br/>\n\n<br/>\n\n\n\n\n<hr/>\n\n\n\n\n<img src=\"https://www.vmware.com/etc/clientlibs/vmwaredevapp/clientlib-nav-redesign/images/vm-logo.png\" style=\"width:80px\"/>   ",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 34,
+                  "h": 7,
+                  "w": 4
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "\n<p align=\"center\">\n<img src=\"https://i.ibb.co/nkHKj3B/AppView.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"https://kibo.wavefront.com/u/gFS7FVRByS?t=aoa-se-demo\" target=\"_blank\">Platform View</a>\n\n\n",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 4,
+                  "y": 34,
+                  "h": 7,
+                  "w": 2
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "\n<p align=\"center\">\n<img src=\"https://i.ibb.co/yySbgj1/Application-View.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"https://kibo.wavefront.com/u/ByzSTTyFpv?t=aoa-se-demo\" target=\"_blank\">Application View</a>\n\n\n",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 6,
+                  "y": 34,
+                  "h": 7,
+                  "w": 2
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "Units",
+              "name": "",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "\n<p align=\"center\">\n<img src=\"https://i.ibb.co/NxBm24N/BizView.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"https://kibo.wavefront.com/u/gf6cyVtML4?t=aoa-se-demo\" target=\"_blank\">Business View</a>\n\n\n",
+                "showValueColumn": true,
+                "autoColumnTags": false
+              },
+              "chartAttributes": {
+                "dashboardLayout": {
+                  "x": 8,
+                  "y": 34,
+                  "h": 7,
+                  "w": 2
+                }
+              },
+              "sources": [
+                {
+                  "name": "A",
+                  "query": "",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": true,
+                  "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts(undefined)\"}",
+                  "sourceDescription": "",
+                  "scatterPlotSource": "Y"
+                }
+              ],
+              "noDefaultEvents": false,
+              "summarization": "MEAN",
+              "interpolatePoints": false,
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            }
+          ]
+        }
+      ],
+      "sectionFilter": null
+    }
+  ],
+  "parameterDetails": {},
+  "disableRefreshInLiveMode": false,
+  "hideChartWarning": false,
+  "displayDescription": false,
+  "displaySectionTableOfContents": true,
+  "displayQueryParameters": true,
+  "viewsLastDay": 2,
+  "viewsLastWeek": 7,
+  "viewsLastMonth": 66,
+  "acl": {
+    "canView": [],
+    "canModify": [
+      "f86d819e-7f44-4b4c-9955-34eb713644df"
+    ]
+  },
+  "dashboardAttributes": null,
+  "creatorId": "croninr@vmware.com",
+  "updaterId": "croninr@vmware.com",
+  "orphan": false,
+  "systemOwned": false,
+  "createdEpochMillis": 1666721104327,
+  "updatedEpochMillis": 1669660937107,
+  "deleted": false,
+  "numCharts": 19,
+  "favorite": false,
+  "numFavorites": 3
+}

@@ -15,8 +15,8 @@
             {
             "chartSettings": {
                 "type": "markdown-widget",
-                "plainMarkdownContent": "<img src=\"https://blogs.vmware.com/management/files/2022/08/vmw-prod-icon-aria-cmyk_horiz-1024x348.png\" style=\"width:200px\"/>\n\nThis demonstration shows how Aria Operations for Applications can provide realtime views of the status and performance of Kubernetes clusters and its workloads.\n\nThis demonstration will show:\n * How to invite your team to collaborate\n * How the collector is deployed to a Kubernetes cluster\n * The default dashboards and alerts the provide visibility to the Kubernetes cluster\n * How Aria Operations for Applications can provide insights into how each transaction performs within the application with Open Telemetry",
                 "autoColumnTags": false,
+                "plainMarkdownContent": "<img src=\"https://blogs.vmware.com/management/files/2022/08/vmw-prod-icon-aria-cmyk_horiz-1024x348.png\" style=\"width:200px\"/>\n\nThis demonstration shows how Aria Operations for Applications can provide realtime views of the status and performance of Kubernetes clusters and its workloads.\n\nThis demonstration will show:\n * How to invite your team to collaborate\n * How the collector is deployed to a Kubernetes cluster\n * The default dashboards and alerts the provide visibility to the Kubernetes cluster\n * How Aria Operations for Applications can provide insights into how each transaction performs within the application with Open Telemetry",
                 "defaultSortColumn": null,
                 "sparklineDisplayColor": null,
                 "sparklineLineColor": null,
@@ -53,8 +53,8 @@
             "anomalyDetectionOn": false,
             "chartSettings": {
                 "type": "markdown-widget",
-                "plainMarkdownContent": "## At the end of the Proof of Concept all the charts below should be green",
                 "autoColumnTags": false,
+                "plainMarkdownContent": "## At the end of the Proof of Concept all the charts below should be green",
                 "defaultSortColumn": null,
                 "sparklineDisplayColor": null,
                 "sparklineLineColor": null,
@@ -151,11 +151,11 @@
                 {
                 "name": "A",
                 "query": "",
-                "disabled": false,
                 "secondaryAxis": false,
                 "queryType": "WQL",
                 "querybuilderEnabled": true,
-                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}"
+                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}",
+                "disabled": false
                 }
             ],
             "noDefaultEvents": false,
@@ -166,8 +166,8 @@
             "anomalyDetectionOn": false,
             "chartSettings": {
                 "type": "markdown-widget",
-                "plainMarkdownContent": "\n\n\n<p align=\"center\">\n<img src=\"https://i.ibb.co/NxtP993/Capture-d-e-cran-2022-11-25-a-16-30-08.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"/users/invite\" target=\"_blank\">Invite team members</a>\n",
                 "autoColumnTags": false,
+                "plainMarkdownContent": "\n\n\n<p align=\"center\">\n<img src=\"https://i.ibb.co/NxtP993/Capture-d-e-cran-2022-11-25-a-16-30-08.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"/users/invite\" target=\"_blank\">Invite team members</a>\n",
                 "defaultSortColumn": null,
                 "sparklineDisplayColor": null,
                 "sparklineLineColor": null,
@@ -283,10 +283,10 @@
                 {
                 "name": "A",
                 "query": "ts(~wavefront.users.total)",
-                "disabled": false,
                 "secondaryAxis": false,
                 "queryType": "WQL",
-                "querybuilderEnabled": false
+                "querybuilderEnabled": false,
+                "disabled": false
                 }
             ],
             "noDefaultEvents": false
@@ -378,11 +378,11 @@
                 {
                 "name": "A",
                 "query": "ts(~wavefront.users.total)",
-                "disabled": false,
                 "secondaryAxis": false,
                 "queryType": "WQL",
                 "querybuilderEnabled": false,
-                "sourceDescription": ""
+                "sourceDescription": "",
+                "disabled": false
                 }
             ],
             "noDefaultEvents": false,
@@ -447,11 +447,11 @@
                 {
                 "name": "A",
                 "query": "",
-                "disabled": false,
                 "secondaryAxis": false,
                 "queryType": "WQL",
                 "querybuilderEnabled": true,
-                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}"
+                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}",
+                "disabled": false
                 }
             ],
             "noDefaultEvents": false,
@@ -462,8 +462,8 @@
             "anomalyDetectionOn": false,
             "chartSettings": {
                 "type": "markdown-widget",
-                "plainMarkdownContent": "<p align=\"center\">\n<img src=\"https://i.ibb.co/1KfP6T0/setup.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"/integration/kubernetes/setup\" target=\"_blank\">setup K8s collector</a>\n",
                 "autoColumnTags": false,
+                "plainMarkdownContent": "<p align=\"center\">\n<img src=\"https://i.ibb.co/1KfP6T0/setup.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"/integration/kubernetes/setup\" target=\"_blank\">setup K8s collector</a>\n",
                 "defaultSortColumn": null,
                 "sparklineDisplayColor": null,
                 "sparklineLineColor": null,
@@ -566,6 +566,7 @@
             "base": 0,
             "chartAttributes": {
                 "lineFill": 0,
+                "noDataMessage": "No Kubernetes Cluster",
                 "singleStat": {
                 "sparklineDisplayLabel": "A",
                 "sparklineDisplaySubLabel": "Kubernetes Cluster(s) Connected"
@@ -582,11 +583,11 @@
                 {
                 "name": "A",
                 "query": "ts(~wavefront.kubernetes.clusters.total)",
-                "disabled": false,
                 "secondaryAxis": false,
                 "queryType": "WQL",
                 "querybuilderEnabled": false,
-                "sourceDescription": ""
+                "sourceDescription": "",
+                "disabled": false
                 }
             ],
             "noDefaultEvents": false,
@@ -651,11 +652,11 @@
                 {
                 "name": "A",
                 "query": "",
-                "disabled": false,
                 "secondaryAxis": false,
                 "queryType": "WQL",
                 "querybuilderEnabled": true,
-                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}"
+                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}",
+                "disabled": false
                 }
             ],
             "noDefaultEvents": false,
@@ -666,8 +667,8 @@
             "anomalyDetectionOn": false,
             "chartSettings": {
                 "type": "markdown-widget",
-                "plainMarkdownContent": "<p align=\"center\">\n<img src=\"https://i.ibb.co/QvtwFSc/Dashboards.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"/integration/kubernetes/content\" target=\"_blank\">Pre defined Dashboards</a>",
                 "autoColumnTags": false,
+                "plainMarkdownContent": "<p align=\"center\">\n<img src=\"https://i.ibb.co/QvtwFSc/Dashboards.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"/integration/kubernetes/content\" target=\"_blank\">Pre defined Dashboards</a>",
                 "defaultSortColumn": null,
                 "sparklineDisplayColor": null,
                 "sparklineLineColor": null,
@@ -777,6 +778,7 @@
                     50
                 ]
                 },
+                "noDataMessage": "No Dashboard installed",
                 "singleStat": {
                 "sparklineDisplayLabel": "A",
                 "sparklineDisplaySubLabel": "New Chart"
@@ -793,11 +795,11 @@
                 {
                 "name": "A",
                 "query": "count(last(ts(\"~ui.dashboards.integration-kubernetes-*\")), user) / 0.08 ",
-                "disabled": false,
                 "secondaryAxis": false,
                 "queryType": "WQL",
                 "querybuilderEnabled": false,
-                "sourceDescription": ""
+                "sourceDescription": "",
+                "disabled": false
                 }
             ],
             "noDefaultEvents": false,
@@ -862,11 +864,11 @@
                 {
                 "name": "A",
                 "query": "",
-                "disabled": false,
                 "secondaryAxis": false,
                 "queryType": "WQL",
                 "querybuilderEnabled": true,
-                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}"
+                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}",
+                "disabled": false
                 }
             ],
             "noDefaultEvents": false,
@@ -875,8 +877,8 @@
             {
             "chartSettings": {
                 "type": "markdown-widget",
-                "plainMarkdownContent": "<p align=\"center\">\n<img src=\"https://i.ibb.co/mJm9JYf/Alerts.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"/integration/kubernetes/alerts\" target=\"_blank\">Pre defined Alerts</a>",
                 "autoColumnTags": false,
+                "plainMarkdownContent": "<p align=\"center\">\n<img src=\"https://i.ibb.co/mJm9JYf/Alerts.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"/integration/kubernetes/alerts\" target=\"_blank\">Pre defined Alerts</a>",
                 "defaultSortColumn": null,
                 "sparklineDisplayColor": null,
                 "sparklineLineColor": null,
@@ -992,6 +994,7 @@
                     50
                 ]
                 },
+                "noDataMessage": "No Alert Installed",
                 "singleStat": {
                 "sparklineDisplayLabel": "A",
                 "sparklineDisplaySubLabel": ""
@@ -1008,10 +1011,11 @@
                 {
                 "name": "A Clone",
                 "query": "count(ts(~alert.summary.*, alertTag1=\"~integration.kubernetes\"))",
-                "disabled": false,
                 "secondaryAxis": false,
                 "queryType": "WQL",
-                "querybuilderEnabled": false
+                "querybuilderEnabled": false,
+                "sourceDescription": "",
+                "disabled": false
                 }
             ],
             "noDefaultEvents": false,
@@ -1076,11 +1080,11 @@
                 {
                 "name": "A",
                 "query": "",
-                "disabled": false,
                 "secondaryAxis": false,
                 "queryType": "WQL",
                 "querybuilderEnabled": true,
-                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}"
+                "querybuilderSerialization": "{\"_v\":1,\"filters\":[[],\"and\"],\"functions\":[],\"metric\":\"ts()\"}",
+                "disabled": false
                 }
             ],
             "noDefaultEvents": false,
@@ -1091,8 +1095,8 @@
             "anomalyDetectionOn": false,
             "chartSettings": {
                 "type": "markdown-widget",
-                "plainMarkdownContent": "<p align=\"center\">\n<img src=\"https://i.ibb.co/wgp43jy/app-map.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"/tracing/appmap\" target=\"_blank\">Application Map</a>",
                 "autoColumnTags": false,
+                "plainMarkdownContent": "<p align=\"center\">\n<img src=\"https://i.ibb.co/wgp43jy/app-map.png\" style=\"height:210px\"/> \n<p align=\"center\"> \n <a href=\"/tracing/appmap\" target=\"_blank\">Application Map</a>",
                 "defaultSortColumn": null,
                 "sparklineDisplayColor": null,
                 "sparklineLineColor": null,
@@ -1215,6 +1219,7 @@
                     50
                 ]
                 },
+                "noDataMessage": "No trace collected",
                 "singleStat": {
                 "sparklineDisplayLabel": "A",
                 "sparklineDisplaySubLabel": ""
@@ -1231,11 +1236,11 @@
                 {
                 "name": "A Clone",
                 "query": "default(0, ts(~tracing.traces.received))",
-                "disabled": false,
                 "secondaryAxis": false,
                 "queryType": "WQL",
                 "querybuilderEnabled": false,
-                "sourceDescription": ""
+                "sourceDescription": "",
+                "disabled": false
                 }
             ],
             "noDefaultEvents": false,
@@ -1244,7 +1249,8 @@
         ],
         "heightFactor": 140
         }
-    ]
+    ],
+    "sectionFilter": null
     }
 ],
 "parameterDetails": {},
