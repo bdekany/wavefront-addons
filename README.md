@@ -24,6 +24,14 @@ $ terraform plan
 $ terraform apply
 ```
 
+### Web IDE
+
+Launch this repo in a web IDE to deploy Dashboard without installing Terrafom on your computer.
+
+[![Contribute with Gitpod](https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod)](https://gitpod.io/#https://github.com/aria-apps-community/dashboards)
+
+[![Run on Repl.it](https://replit.com/badge/github/aria-apps-community/dashboards)](https://replit.com/new/github/aria-apps-community/dashboards)
+
 ### Manual Installation
 
 Create a new dashboard and import JSON Code

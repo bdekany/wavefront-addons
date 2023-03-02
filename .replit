@@ -1,0 +1,5 @@
+onBoot = "terraform init"
+run = "cowsay Run terraform apply!"
+
+[nix]
+channel = "stable-22_11"
