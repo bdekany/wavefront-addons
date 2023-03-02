@@ -9,7 +9,6 @@ terraform {
 variable "WAVEFRONT_ADDRESS" {
   type = string
   description = "URL to your wavefont tenant ex: longboard.wavefront.com"
-  default = "longboard.wavefront.com"
 }
 
 variable "WAVEFRONT_TOKEN" {
