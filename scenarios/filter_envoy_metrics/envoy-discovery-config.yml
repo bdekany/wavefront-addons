@@ -1,0 +1,54 @@
+---
+# See docs/collector/discovery.md for more details
+apiVersion: v1
+kind: Secret
+metadata:
+  name: envoy-config
+  namespace: observability-system
+  annotations:
+    wavefront.com/discovery-config: 'true'
+stringData:
+  collector.yaml: |
+    # specify a list of discovery rules (plugins)
+    plugins:
+    - name: envoy
+      type: prometheus
+      collection:
+      interval: 5m
+      selectors:
+        images:
+        - '*envoy*'
+      filters:
+        metricAllowList:
+        - 'envoy.cluster.membership.healthy.gauge'
+        - 'envoy.cluster.upstream.cx.active.gauge'
+        - 'envoy.cluster.upstream.cx.rx.bytes.buffered.gauge'
+        - 'envoy.cluster.upstream.cx.rx.bytes.total.counter'
+        - 'envoy.cluster.upstream.cx.total.counter'
+        - 'envoy.cluster.upstream.cx.tx.bytes.buffered.gauge'
+        - 'envoy.cluster.upstream.cx.tx.bytes.total.counter'
+        - 'envoy.cluster.upstream.rq.active.gauge'
+        - 'envoy.cluster.upstream.rq.pending.overflow.counter'
+        - 'envoy.cluster.upstream.rq.timeout.counter'
+        - 'envoy.cluster.upstream.rq.total.counter'
+        - 'envoy.filesystem.reopen.failed.counter'
+        - 'envoy.filesystem.write.total.buffered.gauge'
+        - 'envoy.http.downstream.cx.active.gauge'
+        - 'envoy.http.downstream.cx.rx.bytes.buffered.gauge'
+        - 'envoy.http.downstream.cx.rx.bytes.total.counter'
+        - 'envoy.http.downstream.cx.total.counter'
+        - 'envoy.http.downstream.cx.tx.bytes.buffered.gauge'
+        - 'envoy.http.downstream.cx.tx.bytes.total.counter'
+        - 'envoy.http.downstream.rq.completed.counter'
+        - 'envoy.http.rq.total.counter'
+        - 'envoy.listener.manager.listener.added.counter'
+        - 'envoy.listener.manager.total.listeners.active.gauge'
+        - 'envoy.runtime.load.error.counter'
+        - 'envoy.runtime.load.success.counter'
+        - 'envoy.runtime.num.keys.gauge'
+        - 'envoy.server.concurrency.gauge'
+        - 'envoy.server.memory.allocated.gauge'
+        - 'envoy.server.memory.heap.size.gauge'
+        - 'envoy.server.total.connections.gauge'
+        - 'envoy.server.uptime.gauge'
+
